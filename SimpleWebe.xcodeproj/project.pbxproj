@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4F987021C3D16B50078E1AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F987011C3D16B50078E1AA /* main.m */; };
+		E4F987051C3D16B50078E1AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F987041C3D16B50078E1AA /* AppDelegate.m */; };
+		E4F987081C3D16B50078E1AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F987071C3D16B50078E1AA /* ViewController.m */; };
+		E4F9870B1C3D16B50078E1AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F987091C3D16B50078E1AA /* Main.storyboard */; };
+		E4F9870D1C3D16B50078E1AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F9870C1C3D16B50078E1AA /* Assets.xcassets */; };
+		E4F987101C3D16B50078E1AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F9870E1C3D16B50078E1AA /* LaunchScreen.storyboard */; };
+		E4F9871B1C3D16B50078E1AA /* SimpleWebeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F9871A1C3D16B50078E1AA /* SimpleWebeTests.m */; };
+		E4F987261C3D16B50078E1AA /* SimpleWebeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F987251C3D16B50078E1AA /* SimpleWebeUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4F987171C3D16B50078E1AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4F986F51C3D16B50078E1AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4F986FC1C3D16B50078E1AA;
+			remoteInfo = SimpleWebe;
+		};
+		E4F987221C3D16B50078E1AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4F986F51C3D16B50078E1AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4F986FC1C3D16B50078E1AA;
+			remoteInfo = SimpleWebe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4F986FD1C3D16B50078E1AA /* SimpleWebe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWebe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F987011C3D16B50078E1AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4F987031C3D16B50078E1AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E4F987041C3D16B50078E1AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E4F987061C3D16B50078E1AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E4F987071C3D16B50078E1AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E4F9870A1C3D16B50078E1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4F9870C1C3D16B50078E1AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4F9870F1C3D16B50078E1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4F987111C3D16B50078E1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F987161C3D16B50078E1AA /* SimpleWebeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWebeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F9871A1C3D16B50078E1AA /* SimpleWebeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleWebeTests.m; sourceTree = "<group>"; };
+		E4F9871C1C3D16B50078E1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F987211C3D16B50078E1AA /* SimpleWebeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWebeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F987251C3D16B50078E1AA /* SimpleWebeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleWebeUITests.m; sourceTree = "<group>"; };
+		E4F987271C3D16B50078E1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4F986FA1C3D16B50078E1AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F987131C3D16B50078E1AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F9871E1C3D16B50078E1AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4F986F41C3D16B50078E1AA = {
+			isa = PBXGroup;
+			children = (
+				E4F986FF1C3D16B50078E1AA /* SimpleWebe */,
+				E4F987191C3D16B50078E1AA /* SimpleWebeTests */,
+				E4F987241C3D16B50078E1AA /* SimpleWebeUITests */,
+				E4F986FE1C3D16B50078E1AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4F986FE1C3D16B50078E1AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4F986FD1C3D16B50078E1AA /* SimpleWebe.app */,
+				E4F987161C3D16B50078E1AA /* SimpleWebeTests.xctest */,
+				E4F987211C3D16B50078E1AA /* SimpleWebeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4F986FF1C3D16B50078E1AA /* SimpleWebe */ = {
+			isa = PBXGroup;
+			children = (
+				E4F987031C3D16B50078E1AA /* AppDelegate.h */,
+				E4F987041C3D16B50078E1AA /* AppDelegate.m */,
+				E4F987061C3D16B50078E1AA /* ViewController.h */,
+				E4F987071C3D16B50078E1AA /* ViewController.m */,
+				E4F987091C3D16B50078E1AA /* Main.storyboard */,
+				E4F9870C1C3D16B50078E1AA /* Assets.xcassets */,
+				E4F9870E1C3D16B50078E1AA /* LaunchScreen.storyboard */,
+				E4F987111C3D16B50078E1AA /* Info.plist */,
+				E4F987001C3D16B50078E1AA /* Supporting Files */,
+			);
+			path = SimpleWebe;
+			sourceTree = "<group>";
+		};
+		E4F987001C3D16B50078E1AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4F987011C3D16B50078E1AA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4F987191C3D16B50078E1AA /* SimpleWebeTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4F9871A1C3D16B50078E1AA /* SimpleWebeTests.m */,
+				E4F9871C1C3D16B50078E1AA /* Info.plist */,
+			);
+			path = SimpleWebeTests;
+			sourceTree = "<group>";
+		};
+		E4F987241C3D16B50078E1AA /* SimpleWebeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E4F987251C3D16B50078E1AA /* SimpleWebeUITests.m */,
+				E4F987271C3D16B50078E1AA /* Info.plist */,
+			);
+			path = SimpleWebeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4F986FC1C3D16B50078E1AA /* SimpleWebe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4F9872A1C3D16B50078E1AA /* Build configuration list for PBXNativeTarget "SimpleWebe" */;
+			buildPhases = (
+				E4F986F91C3D16B50078E1AA /* Sources */,
+				E4F986FA1C3D16B50078E1AA /* Frameworks */,
+				E4F986FB1C3D16B50078E1AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleWebe;
+			productName = SimpleWebe;
+			productReference = E4F986FD1C3D16B50078E1AA /* SimpleWebe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4F987151C3D16B50078E1AA /* SimpleWebeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4F9872D1C3D16B50078E1AA /* Build configuration list for PBXNativeTarget "SimpleWebeTests" */;
+			buildPhases = (
+				E4F987121C3D16B50078E1AA /* Sources */,
+				E4F987131C3D16B50078E1AA /* Frameworks */,
+				E4F987141C3D16B50078E1AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4F987181C3D16B50078E1AA /* PBXTargetDependency */,
+			);
+			name = SimpleWebeTests;
+			productName = SimpleWebeTests;
+			productReference = E4F987161C3D16B50078E1AA /* SimpleWebeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4F987201C3D16B50078E1AA /* SimpleWebeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4F987301C3D16B50078E1AA /* Build configuration list for PBXNativeTarget "SimpleWebeUITests" */;
+			buildPhases = (
+				E4F9871D1C3D16B50078E1AA /* Sources */,
+				E4F9871E1C3D16B50078E1AA /* Frameworks */,
+				E4F9871F1C3D16B50078E1AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4F987231C3D16B50078E1AA /* PBXTargetDependency */,
+			);
+			name = SimpleWebeUITests;
+			productName = SimpleWebeUITests;
+			productReference = E4F987211C3D16B50078E1AA /* SimpleWebeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4F986F51C3D16B50078E1AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ehongzhen;
+				TargetAttributes = {
+					E4F986FC1C3D16B50078E1AA = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2EWQ7L7QV9;
+					};
+					E4F987151C3D16B50078E1AA = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2EWQ7L7QV9;
+						TestTargetID = E4F986FC1C3D16B50078E1AA;
+					};
+					E4F987201C3D16B50078E1AA = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2EWQ7L7QV9;
+						TestTargetID = E4F986FC1C3D16B50078E1AA;
+					};
+				};
+			};
+			buildConfigurationList = E4F986F81C3D16B50078E1AA /* Build configuration list for PBXProject "SimpleWebe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4F986F41C3D16B50078E1AA;
+			productRefGroup = E4F986FE1C3D16B50078E1AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4F986FC1C3D16B50078E1AA /* SimpleWebe */,
+				E4F987151C3D16B50078E1AA /* SimpleWebeTests */,
+				E4F987201C3D16B50078E1AA /* SimpleWebeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4F986FB1C3D16B50078E1AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F987101C3D16B50078E1AA /* LaunchScreen.storyboard in Resources */,
+				E4F9870D1C3D16B50078E1AA /* Assets.xcassets in Resources */,
+				E4F9870B1C3D16B50078E1AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F987141C3D16B50078E1AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F9871F1C3D16B50078E1AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4F986F91C3D16B50078E1AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F987081C3D16B50078E1AA /* ViewController.m in Sources */,
+				E4F987051C3D16B50078E1AA /* AppDelegate.m in Sources */,
+				E4F987021C3D16B50078E1AA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F987121C3D16B50078E1AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F9871B1C3D16B50078E1AA /* SimpleWebeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F9871D1C3D16B50078E1AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F987261C3D16B50078E1AA /* SimpleWebeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4F987181C3D16B50078E1AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4F986FC1C3D16B50078E1AA /* SimpleWebe */;
+			targetProxy = E4F987171C3D16B50078E1AA /* PBXContainerItemProxy */;
+		};
+		E4F987231C3D16B50078E1AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4F986FC1C3D16B50078E1AA /* SimpleWebe */;
+			targetProxy = E4F987221C3D16B50078E1AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4F987091C3D16B50078E1AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F9870A1C3D16B50078E1AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4F9870E1C3D16B50078E1AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F9870F1C3D16B50078E1AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4F987281C3D16B50078E1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E4F987291C3D16B50078E1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4F9872B1C3D16B50078E1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleWebe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehongzhen.SimpleWebe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4F9872C1C3D16B50078E1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleWebe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehongzhen.SimpleWebe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E4F9872E1C3D16B50078E1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SimpleWebeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehongzhen.SimpleWebeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleWebe.app/SimpleWebe";
+			};
+			name = Debug;
+		};
+		E4F9872F1C3D16B50078E1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SimpleWebeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehongzhen.SimpleWebeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleWebe.app/SimpleWebe";
+			};
+			name = Release;
+		};
+		E4F987311C3D16B50078E1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SimpleWebeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehongzhen.SimpleWebeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SimpleWebe;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E4F987321C3D16B50078E1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SimpleWebeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehongzhen.SimpleWebeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SimpleWebe;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4F986F81C3D16B50078E1AA /* Build configuration list for PBXProject "SimpleWebe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F987281C3D16B50078E1AA /* Debug */,
+				E4F987291C3D16B50078E1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4F9872A1C3D16B50078E1AA /* Build configuration list for PBXNativeTarget "SimpleWebe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F9872B1C3D16B50078E1AA /* Debug */,
+				E4F9872C1C3D16B50078E1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4F9872D1C3D16B50078E1AA /* Build configuration list for PBXNativeTarget "SimpleWebeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F9872E1C3D16B50078E1AA /* Debug */,
+				E4F9872F1C3D16B50078E1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4F987301C3D16B50078E1AA /* Build configuration list for PBXNativeTarget "SimpleWebeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F987311C3D16B50078E1AA /* Debug */,
+				E4F987321C3D16B50078E1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4F986F51C3D16B50078E1AA /* Project object */;
+}
