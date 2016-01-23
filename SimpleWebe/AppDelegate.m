@@ -7,6 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "SWTabBarViewController.h"
+#import "SWOAuthViewController.h"
+#import "SWAccountTool.h"
+#import "SDWebImageManager.h"
+#import "SDImageCache.h"
+#import "SWHttpTool.h"
+
 
 @interface AppDelegate ()
 
@@ -16,7 +23,54 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    //1.创建窗口
+    self.window = [[UIWindow alloc] init];
+    self.window.frame = [UIScreen mainScreen].bounds;
+    
+    //2.显示窗口（成为主窗口）
+    [self.window makeKeyAndVisible];
+
+    SWAccount *account = [SWAccountTool account];
+    
+    //3.设置窗口的根控制器
+    
+    if (account) {
+    
+        self.window.rootViewController = [[SWTabBarViewController alloc] init];
+    } else {
+        self.window.rootViewController = [[SWOAuthViewController alloc] init];
+    }
+    
+    //监控网络
+    [SWHttpTool setReachabilityStatus:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+            case AFNetworkReachabilityStatusNotReachable:
+            {
+                SWLog(@"没有网络");
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
+                
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"网络异常";
+                hud.margin = 10.f;
+                hud.removeFromSuperViewOnHide = YES;
+                [hud hide:YES afterDelay:3];
+            }
+                
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                SWLog(@"手机网络");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                SWLog(@"Wifi");
+                break;
+            default:
+                break;
+        }
+    }];
+    
+    
     return YES;
 }
 
@@ -40,6 +94,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    //清除所有的内存缓存
+    [[SDImageCache sharedImageCache] clearMemory];
+    
+    //停止真在进行的图片下载操作
+    [[SDWebImageManager sharedManager] cancelAll];
+    
 }
 
 @end

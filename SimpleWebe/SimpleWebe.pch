@@ -1,0 +1,84 @@
+//
+//  SimpleWebe.pch
+//  SimpleWebe
+//
+//  Created by 鄂鸿桢 on 16/1/6.
+//  Copyright © 2016年 ehongzhen. All rights reserved.
+//
+
+#ifndef SimpleWebe_pch
+#define SimpleWebe_pch
+#ifdef __OBJC__
+
+
+#import "SWTabBarViewController.h"
+#import "SWNavigationController.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+SWExtension.h"
+#import "SWTabBar.h"
+#import "SWAccount.h"
+#import "MBProgressHUD.h"
+#import <MJExtension.h>
+#import <UIImageView+WebCache.h>
+#import "AFNetworking.h"
+#import "UIImage+Extension.h"
+
+// 颜色
+#define SWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+//随机色
+#define SWRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+
+//SWLog定义
+#ifdef DEBUG // 调试状态, 打开LOG功能
+#define SWLog(...) NSLog(__VA_ARGS__)
+#else // 发布状态, 关闭LOG功能
+#define SWLog(...)
+#endif
+
+//应用信息
+#define SWAppkey @"578470285"
+#define SWAppSecret @"24b743b6ba1b4c203a662eda1864454a"
+#define SWRedirectURI @"http://e29hz.space"
+
+//屏幕尺寸
+#define SWScreenW [UIScreen mainScreen].bounds.size.width
+
+//cell的一些计算参数
+//cell之间的间距
+#define SWStatusCellMargin 10
+
+//cell的内边距
+#define SWStatusCellInset 10
+
+
+//原创微博昵称字体Attribute
+#define SWStatusOriginalNameFontAttribute @{NSFontAttributeName: [UIFont systemFontOfSize:14]}
+//原创微博时间字体Attribute
+#define SWStatusOriginalTimeFontAttribute @{NSFontAttributeName: [UIFont systemFontOfSize:11]}
+//原创微博来源字体Attribute
+#define SWStatusOriginalSourceFontAttribute SWStatusOriginalTimeFontAttribute
+//原创微博正文字体Attribute
+#define SWStatusOriginalTextFontAttribute @{NSFontAttributeName: [UIFont systemFontOfSize:15]}
+//转发微博昵称字体Attribute
+#define SWStatusRetweetedNameFontAttribute SWStatusOriginalNameFontAttribute
+//转发微博正文字体Attribute
+#define SWStatusRetweetedTextFontAttribute SWStatusOriginalTextFontAttribute
+
+
+// 原创微博昵称字体
+#define SWStatusOrginalNameFont [UIFont systemFontOfSize:14]
+// 原创微博时间字体
+#define SWStatusOrginalTimeFont [UIFont systemFontOfSize:11]
+// 原创微博来源字体
+#define SWStatusOrginalSourceFont SWStatusOrginalTimeFont
+// 原创微博正文字体
+#define SWStatusOrginalTextFont [UIFont systemFontOfSize:15]
+// 转发微博昵称字体
+#define SWStatusRetweetedNameFont SWStatusOrginalNameFont
+// 转发微博正文字体
+#define SWStatusRetweetedTextFont SWStatusOrginalTextFont
+
+
+#endif
+#endif /* SimpleWebe_pch */
