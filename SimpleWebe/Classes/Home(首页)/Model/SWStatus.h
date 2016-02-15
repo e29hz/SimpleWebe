@@ -28,6 +28,11 @@
 @property (nonatomic, copy) NSString *text;
 
 /**
+ * 	string 	微博信息富文本
+ */
+@property (nonatomic, copy) NSAttributedString *attributedText;
+
+/**
  * 	string 	微博来源
  */
 @property (nonatomic, copy) NSString *source;
@@ -41,6 +46,10 @@
  * 	object 	被转发的原微博信息字段，当该微博为转发微博时返回 详细
  */
 @property (nonatomic, strong) SWStatus *retweeted_status;
+
+@property (nonatomic, assign, getter=isRetweeted) BOOL retweeted;
+
+
 /**
  * 	int 	转发数
  */

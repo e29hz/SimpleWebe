@@ -10,6 +10,8 @@
 #import "SWStatusRetweetedFrame.h"
 #import "SWStatus.h"
 #import "SWUser.h"
+#import "SWStatusPhotosView.h"
+#import "SWStatusLabel.h"
 
 @interface SWStatusRetweetedView ()
 
@@ -20,7 +22,11 @@
 /**
  *  正文
  */
-@property (nonatomic, weak) UILabel *textLabel;
+@property (nonatomic, weak) SWStatusLabel *textLabel;
+/**
+ *  配图相册
+ */
+@property (nonatomic, weak) SWStatusPhotosView *photosView;
 
 @end
 
@@ -30,20 +36,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled = YES;
         self.image = [UIImage resizedImage:@"timeline_retweet_background"];
         self.highlightedImage = [UIImage resizedImage:@"timeline_retweet_background_highlighted"];
-        //1.昵称
-        UILabel *nameLabel = [[UILabel alloc] init];
-        nameLabel.textColor = SWColor(74, 102, 105);
-        nameLabel.font = SWStatusRetweetedNameFont;
-        [self addSubview:nameLabel];
-        self.nameLabel = nameLabel;
-        //2.正文
-        UILabel *textLabel = [[UILabel alloc] init];
-        textLabel.font = SWStatusRetweetedTextFont;
-        textLabel.numberOfLines = 0;
+
+        SWStatusLabel *textLabel = [[SWStatusLabel alloc] init];
         [self addSubview:textLabel];
         self.textLabel = textLabel;
+        // 微博相册
+        SWStatusPhotosView *photosView = [[SWStatusPhotosView alloc] init];
+        [self addSubview:photosView];
+        self.photosView = photosView;
     }
     return self;
 }
@@ -56,27 +59,20 @@
     
     // 取出微博数据
     SWStatus *retweetedStatus = retweetedFrame.retweetedStatus;
-    // 取出用户数据
-    SWUser *user = retweetedStatus.user;
-    // 昵称
-    self.nameLabel.text = [NSString stringWithFormat:@"@%@", user.name];
-    self.nameLabel.frame = retweetedFrame.nameFrame;
+    
     // 正文
-    self.textLabel.text = retweetedStatus.text;
+    self.textLabel.attributedText = retweetedStatus.attributedText;
     self.textLabel.frame = retweetedFrame.textFrame;
     
+    // 配图相册
+    if (retweetedStatus.pic_urls.count) {
+        self.photosView.frame = retweetedFrame.photosFrame;
+        self.photosView.pic_urls = retweetedStatus.pic_urls;
+        self.photosView.hidden = NO;
+    } else {
+        self.photosView.hidden = YES;
+    }
+    
 }
-
-//- (void)setFrame:(CGRect)frame
-//{
-//    [super setFrame:frame];
-//    
-//    [self setNeedsDisplay];
-//}
-//
-//- (void)drawRect:(CGRect)rect
-//{
-//    [[UIImage resizedImage:[UIImage imageNamed:@"timeline_retweet_background"] drawInRect:rect];
-//}
 
 @end

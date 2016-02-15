@@ -28,4 +28,15 @@ typedef enum {
 @interface SWComposeToolbar : UIView
 
 @property (nonatomic, weak) id<SWComposeToolbarDelegate> delegate;
+///**
+// *  设置某个按钮的图片
+// */
+//- (void)setButtonImage:(NSString *)imageName buttonType:(SWComposeToolbarButtonType)buttonType;
+
+
+/**
+ *  是否要显示表情按钮
+ */
+@property (nonatomic, assign, getter = isShowEmotionButton) BOOL showEmotionButton;
+
 @end

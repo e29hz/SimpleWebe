@@ -20,7 +20,7 @@
 #import "SWStatusTableViewCell.h"
 
 @interface SWHomeTableViewController ()
-@property (nonatomic, weak) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSMutableArray *statusFrames;
 @property (nonatomic, weak) SWLoadMoreFooter *footer;
 
@@ -28,6 +28,8 @@
 @end
 
 @implementation SWHomeTableViewController
+
+@synthesize refreshControl = _refreshControl;
 
 - (NSMutableArray *)statusFrames
 {
@@ -43,7 +45,7 @@
     
     self.tableView.backgroundColor = SWColor(211, 211, 211);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+
     //设置导航栏内容
     [self setupNavBar];
     
@@ -52,7 +54,27 @@
     
     //获取用户信息
     [self getUserInfo];
+    
+    //监听链接选中的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linkDidSelected:) name:SWLinkDidSelectedNotification object:nil];
 }
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)linkDidSelected:(NSNotification *)notification
+{
+    NSString *link = notification.userInfo[SWLink];
+    if ([link hasPrefix:@"http"]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:link]];
+    } else {
+        //跳转控制器
+        SWLog(@"非http链接---%@", link);
+    }
+}
+
 /**
  *  获取用户信息
  */
@@ -182,7 +204,7 @@
     SWStatusFrame *lastStatusFrame = [self.statusFrames lastObject];
     SWStatus *lastStatus = lastStatusFrame.status;
     if (lastStatus) {
-        param.since_id = @([lastStatus.idstr longLongValue] - 1);
+        param.max_id = @([lastStatus.idstr longLongValue] - 1);
     }
     //加载微博数据
     [SWStatusTool homeStatusesWithParam:param success:^(SWHomeStatusesResult *result) {
@@ -326,11 +348,12 @@
     if (delta <= (sawFooterH - 0)) {
         // 进入上拉刷新状态
         [self.footer beginRefreshing];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 加载更多的微博数据
-            [self loadMoreStatuses];
-        });
+        // 加载更多的微博数据
+        [self loadMoreStatuses];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            
+//            
+//        });
     }
 }
 

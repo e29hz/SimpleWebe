@@ -30,6 +30,11 @@
  *  正文
  */
 @property (nonatomic, assign) CGRect textFrame;
+/**
+ *  配图
+ */
+@property (nonatomic, assign) CGRect photosFrame;
+
 
 /**
  *  原微博自身frame

@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RegexKitLite.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1821E24235601DED4EB04868E8E463D5</key>
+		<key>0C64E4A8F6B1DC90B4EBC431C55BF262</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2FF3D36FDF2D56CD41200B70815ACC9D</key>
+		<key>0FF4F30791183D9EB920E900B1E70993</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>409769B1FC752CF6DED844BCF5343C6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

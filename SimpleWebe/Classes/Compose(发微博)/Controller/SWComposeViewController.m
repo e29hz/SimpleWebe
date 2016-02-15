@@ -7,7 +7,7 @@
 //
 
 #import "SWComposeViewController.h"
-#import "SWTextView.h"
+#import "SWEmotionTextView.h"
 #import "SWComposeToolbar.h"
 #import "SWComposePhotosView.h"
 #import "SWAccount.h"
@@ -16,17 +16,36 @@
 #import "SWSendStatusParam.h"
 #import "SWSendStatusResult.h"
 #import "SWStatusTool.h"
+#import "SWEmotionKeyboard.h"
+#import "SWEmotion.h"
 
 @interface SWComposeViewController ()<SWComposeToolbarDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MBProgressHUDDelegate>
-@property (nonatomic, weak) SWTextView *textView;
+@property (nonatomic, weak) SWEmotionTextView *textView;
 @property (nonatomic, weak) SWComposeToolbar *toolbar;
 @property (nonatomic, weak) SWComposePhotosView *photosView;
 @property (nonatomic, strong) MBProgressHUD *hud;
-
-
+@property (nonatomic, assign) CGFloat keyboardH;
+@property (nonatomic, strong) SWEmotionKeyboard *keyboard;
+/**
+ *  是否正在切换键盘
+ */
+@property (nonatomic, assign, getter=isChangingKeyboard) BOOL changingKeyboard;
 @end
 
+
+
 @implementation SWComposeViewController
+
+#pragma mark - 初始化方法
+- (SWEmotionKeyboard *)keyboard
+{
+    if (!_keyboard) {
+        self.keyboard = [SWEmotionKeyboard keyboard];
+        CGFloat keyboardW = self.view.width;
+        self.keyboard.bounds = CGRectMake(0, 0, keyboardW, self.keyboardH);
+    }
+    return _keyboard;
+}
 
 - (void)viewDidLoad
 {
@@ -42,8 +61,14 @@
     
     //添加显示图片相册控件
     [self setupPhotosView];
-
+    
+    //监听表情选中的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidSelected:) name:SWEmotionDidSelectedNotification object:nil];
+    //监听删除表情的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidDeleted:) name:SWEmotionDidDeletedNotification object:nil];
+    
 }
+
 /**
  *  添加显示图片相册控件
  */
@@ -70,12 +95,11 @@
     toolbar.height = 44;
     
     //显示控件
-//    self.textView.inputAccessoryView = toolbar;
+    //    self.textView.inputAccessoryView = toolbar;
     
     toolbar.y = self.view.height - toolbar.height;
-    self.toolbar = toolbar;
     [self.view addSubview:toolbar];
-    
+    self.toolbar = toolbar;
 }
 /**
  *  添加输入控件
@@ -83,7 +107,7 @@
 - (void)setupTextView
 {
     //创建输入控件
-    SWTextView *textView = [[SWTextView alloc] init];
+    SWEmotionTextView *textView = [[SWEmotionTextView alloc] init];
     textView.alwaysBounceVertical = YES;
     
     textView.frame = self.view.bounds;
@@ -91,7 +115,7 @@
     textView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:textView];
     self.textView = textView;
-
+    
     
     //设置提醒文字
     textView.placehoder = @"分享新鲜事...";
@@ -115,6 +139,9 @@
  */
 - (void)keyboardWillHide:(NSNotification *)note
 {
+    if (self.changingKeyboard) {
+        return;
+    }
     // 1.键盘弹出需要的时间
     CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
@@ -137,6 +164,7 @@
         // 取出键盘高度
         CGRect keyboardF = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
         CGFloat keyboardH = keyboardF.size.height;
+        self.keyboardH = keyboardH;
         self.toolbar.transform = CGAffineTransformMakeTranslation(0, - keyboardH);
     }];
 }
@@ -155,7 +183,26 @@
  */
 - (void)setupNav
 {
-    self.title = @"发微博";
+    NSString *name = [SWAccountTool account].name;
+    if (name) {
+        //构建文字
+        NSString *prefixStr = @"发微博";
+        NSString *text = [NSString stringWithFormat:@"%@\n%@", prefixStr, name];
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
+        [string addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:15] range:[text rangeOfString:prefixStr]];
+        [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:[text rangeOfString:name]];
+        //创建label
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.attributedText = string;
+        titleLabel.numberOfLines = 0;
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.width = 100;
+        titleLabel.height = 44;
+        self.navigationItem.titleView = titleLabel;
+    } else {
+        self.title = @"发微博";
+    }
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:@selector(send)];
     
@@ -208,7 +255,7 @@
 - (void)sendStatusWithoutImage
 {
     SWSendStatusParam *param = [SWSendStatusParam param];
-    param.status = self.textView.text;
+    param.status = self.textView.realText;
     [SWStatusTool sendStatusWithParam:param success:^(SWSendStatusResult *result) {
         [self hud:@"发布成功"];
     } failure:^(NSError *error) {
@@ -218,8 +265,7 @@
 
 - (void)hud:(NSString *)message
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[[UIApplication sharedApplication].windows lastObject] animated:YES];
-    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[[UIApplication sharedApplication].windows firstObject] animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.labelText = message;
     hud.margin = 10.f;
@@ -237,10 +283,12 @@
 {
     [self.view endEditing:YES];
 }
-
+/**
+ *  当textView的文字发生改变时就会调用
+ */
 - (void)textViewDidChange:(UITextView *)textView
 {
-    self.navigationItem.rightBarButtonItem.enabled = textView.text.length != 0;
+    self.navigationItem.rightBarButtonItem.enabled = textView.hasText;
 }
 
 #pragma mark - SWComposeToolbarDelegate
@@ -251,23 +299,18 @@
 {
     switch (buttonType) {
         case SWComposeToolbarButtonTypeCamera:
-            SWLog(@"SWComposeToolbarButtonTypeCamera");
             [self openCamera];
             break;
         case SWComposeToolbarButtonTypePicture:
-            SWLog(@"SWComposeToolbarButtonTypePicture");
             [self openAlbum];
             break;
         case SWComposeToolbarButtonTypeMention:
-            SWLog(@"SWComposeToolbarButtonTypeMention");
             [self openMention];
             break;
         case SWComposeToolbarButtonTypeTrend:
-            SWLog(@"SWComposeToolbarB uttonTypeTrend");
             [self addTrend];
             break;
         case SWComposeToolbarButtonTypeEmotion:
-            SWLog(@"SWComposeToolbarButtonTypeEmotion");
             [self openEmotion];
             break;
         default:
@@ -317,8 +360,58 @@
  */
 - (void)openEmotion
 {
+    //正在切换键盘
+    self.changingKeyboard = YES;
+    if (self.textView.inputView) {
+        self.textView.inputView = nil;
+        //显示表情图片
+        self.toolbar.showEmotionButton = YES;
+    } else {
+        
+        
+        self.textView.inputView = self.keyboard;
+        //不显示表情图片
+        self.toolbar.showEmotionButton = NO;
+    }
+    //如果更换了文本输入框的键盘,要重新打开键盘
+    // 关闭键盘
+    [self.textView resignFirstResponder];
+    
+    // 更换完毕
+    self.changingKeyboard = NO;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 打开键盘
+        [self.textView becomeFirstResponder];
+    });
+    
     
 }
+/**
+ *  当表情选中的时候调用
+ *
+ *  @param note 里面包含了选中的表情
+ */
+- (void)emotionDidSelected:(NSNotification *)note
+{
+    SWEmotion *emotion = note.userInfo[SWSelectedEmotion];
+//    SWLog(@"%@ %@", emotion.chs, emotion.emoji);
+
+    [self.textView appendEmotion:emotion];
+    //检测文字长度
+    [self textViewDidChange:self.textView];
+}
+
+/**
+ *  当点击表情键盘上的删除按钮时调用
+ */
+- (void)emotionDidDeleted:(NSNotification *)note
+{
+    //往回删
+    [self.textView deleteBackward];
+    
+}
+
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
@@ -329,7 +422,7 @@
     //添加图片到相册中
     [self.photosView addImage:image];
     
-    SWLog(@"%@", info);
+//    SWLog(@"%@", info);
 }
 
 @end

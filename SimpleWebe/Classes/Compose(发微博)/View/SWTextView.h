@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *placehoder;
 
 @property (nonatomic, strong) UIColor *placehoderColor;
+
+
 @end

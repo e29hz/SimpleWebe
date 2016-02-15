@@ -52,7 +52,7 @@
 - (void)textDidChange
 {
 //    SWLog(@"textDidChange---%@", self.text);
-    self.placehoderLabel.hidden = (self.text.length != 0);
+    self.placehoderLabel.hidden = (self.attributedText.length != 0);
 
 }
 
@@ -65,6 +65,14 @@
     
     [self textDidChange];
 }
+
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    
+    [self textDidChange];
+}
+
 - (void)setFont:(UIFont *)font
 {
     [super setFont:font];

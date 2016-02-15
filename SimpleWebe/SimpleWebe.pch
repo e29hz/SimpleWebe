@@ -74,11 +74,38 @@
 #define SWStatusOrginalSourceFont SWStatusOrginalTimeFont
 // 原创微博正文字体
 #define SWStatusOrginalTextFont [UIFont systemFontOfSize:15]
+//富文本字体
+#define SWStatusRichTextFont SWStatusOrginalTextFont
 // 转发微博昵称字体
 #define SWStatusRetweetedNameFont SWStatusOrginalNameFont
 // 转发微博正文字体
 #define SWStatusRetweetedTextFont SWStatusOrginalTextFont
+//高亮颜色
+#define SWStatusHighTextColor SWColor(80, 125, 175)
 
+/**
+ *  表情
+ */
+// 表情的最大行数
+#define SWEmotionMaxRows 3
+// 表情的最大列数
+#define SWEmotionMaxCols 7
+// 每页最多显示多少个表情
+#define SWEmotionMaxCountPerPage (SWEmotionMaxRows * SWEmotionMaxCols - 1)
+
+// 通知
+// 表情选中的通知
+#define SWEmotionDidSelectedNotification @"SWEmotionDidSelectedNotification"
+// 点击删除按钮的通知
+#define SWEmotionDidDeletedNotification @"SWEmotionDidDeletedNotification"
+// 链接选中的通知
+#define SWLinkDidSelectedNotification @"SWLinkDidSelectedNotification"
+
+// 通知里面取出表情用的key
+#define SWSelectedEmotion @"SWSelectedEmotion"
+
+// 富文本中出现的连接
+#define SWLink @"link"
 
 #endif
 #endif /* SimpleWebe_pch */

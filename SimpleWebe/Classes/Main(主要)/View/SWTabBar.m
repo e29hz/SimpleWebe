@@ -47,7 +47,6 @@
 
 - (void)plusClick
 {
-    SWLog(@"plusClick----");
     
     if ([self.tabBarDelegate respondsToSelector:@selector(tabBarDidClickedPlusButton:)]) {
         [self.tabBarDelegate tabBarDidClickedPlusButton:self];

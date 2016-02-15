@@ -22,7 +22,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        self.userInteractionEnabled = YES;
+
         self.image = [UIImage resizedImage:@"timeline_card_top_background"];
         
         //添加原创微博

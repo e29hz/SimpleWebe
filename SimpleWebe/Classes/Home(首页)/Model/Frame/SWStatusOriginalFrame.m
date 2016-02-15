@@ -9,6 +9,7 @@
 #import "SWStatusOriginalFrame.h"
 #import "SWStatus.h"
 #import "SWUser.h"
+#import "SWStatusPhotosView.h"
 
 
 @implementation SWStatusOriginalFrame
@@ -39,21 +40,31 @@
         self.vipFrame = CGRectMake(vipX, vipY, vipW, vipH);
     }
     
-
-    
     //正文
     CGFloat textX = iconX;
     CGFloat textY = CGRectGetMaxY(self.iconFrame) + SWStatusCellInset;
     CGFloat maxW = SWScreenW - 2 * textX;
     CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
-    CGSize textSize = [status.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:SWStatusOriginalTextFontAttribute context:nil].size;
+    CGSize textSize = [status.attributedText boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
     self.textFrame = (CGRect){{textX, textY}, textSize};
+    
+    CGFloat h = 0;
+    //配图相册frame
+    if (status.pic_urls.count) {
+        CGFloat photosX = textX;
+        CGFloat photosY = CGRectGetMaxY(self.textFrame) + SWStatusCellInset;
+        CGSize photosSize = [SWStatusPhotosView sizeWithPhotosCount:(int)status.pic_urls.count];
+        self.photosFrame = (CGRect){{photosX, photosY}, photosSize};
+        
+        h = CGRectGetMaxY(self.photosFrame) + SWStatusCellInset;
+    } else {
+        h = CGRectGetMaxY(self.textFrame) + SWStatusCellInset;
+    }
     
     //原创微博
     CGFloat x = 0;
-        CGFloat y = 0;
-        CGFloat w = SWScreenW;
-        CGFloat h = CGRectGetMaxY(self.textFrame) + SWStatusCellInset;
+    CGFloat y = 0;
+    CGFloat w = SWScreenW;
     self.frame = CGRectMake(x, y, w, h);
 }
 

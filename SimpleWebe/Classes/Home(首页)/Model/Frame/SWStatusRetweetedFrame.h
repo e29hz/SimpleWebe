@@ -14,8 +14,20 @@
  *  转发微博数据
  */
 @property (nonatomic, strong) SWStatus *retweetedStatus;
-
+/**
+ *  转发微博frame
+ */
 @property (nonatomic, assign) CGRect frame;
+/**
+ *  昵称
+ */
 @property (nonatomic, assign) CGRect nameFrame;
+/**
+ *  正文
+ */
 @property (nonatomic, assign) CGRect textFrame;
+/**
+ *  配图
+ */
+@property (nonatomic, assign) CGRect photosFrame;
 @end

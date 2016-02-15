@@ -10,6 +10,9 @@
 #import "SWStatusOriginalFrame.h"
 #import "SWStatus.h"
 #import "SWUser.h"
+#import "SWStatusPhotosView.h"
+#import "SWStatusLabel.h"
+
 
 @interface SWStatusOriginalView ()
 /**
@@ -19,7 +22,7 @@
 /**
  *  正文
  */
-@property (nonatomic, weak) UILabel *textLabel;
+@property (nonatomic, weak) SWStatusLabel *textLabel;
 /**
  *  时间
  */
@@ -36,6 +39,10 @@
  *  会员图标
  */
 @property (nonatomic, weak) UIImageView *vipView;
+/**
+ *  配图相册
+ */
+@property (nonatomic, weak) SWStatusPhotosView *photosView;
 @end
 
 @implementation SWStatusOriginalView
@@ -51,9 +58,7 @@
         self.nameLabel = nameLabel;
 
         // 正文
-        UILabel *textLabel = [[UILabel alloc] init];
-        textLabel.font = SWStatusOrginalTextFont;
-        textLabel.numberOfLines = 0;
+        SWStatusLabel *textLabel = [[SWStatusLabel alloc] init];
         [self addSubview:textLabel];
         self.textLabel = textLabel;
         // 时间
@@ -77,6 +82,11 @@
         vipView.contentMode = UIViewContentModeCenter;
         [self addSubview:vipView];
         self.vipView = vipView;
+        // 微博相册
+        
+        SWStatusPhotosView *photosView = [[SWStatusPhotosView alloc] init];
+        [self addSubview:photosView];
+        self.photosView = photosView;
     }
     return self;
 }
@@ -102,7 +112,7 @@
         self.vipView.hidden = YES;
     }
     // 正文
-    self.textLabel.text = status.text;
+    self.textLabel.attributedText = status.attributedText;
     self.textLabel.frame = originalFrame.textFrame;
     // 时间
     NSString *time = status.created_at;
@@ -125,7 +135,16 @@
     self.iconView.frame = originalFrame.iconFrame;
     NSString *imageUrlStr = status.user.profile_image_url;
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:imageUrlStr] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
-   
+    // 配图相册
+    if (status.pic_urls.count) {
+        self.photosView.frame = originalFrame.photosFrame;
+        self.photosView.pic_urls = originalFrame.status.pic_urls;
+        self.photosView.hidden = NO;
+    } else {
+        self.photosView.hidden = YES;
+    }
+    
+    
     
     
 }

@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface SWPhoto : NSObject
+/**
+ *  缩略图
+ */
+@property (nonatomic, copy) NSString *thumbnail_pic;
+/**
+ *  中等尺寸
+ */
+@property (nonatomic, copy) NSString *bmiddle_pic;
 
 @end
