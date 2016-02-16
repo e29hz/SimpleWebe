@@ -10,6 +10,9 @@
 #import "SWCommonGroup.h"
 #import "SWCommonItem.h"
 #import "SWCommonCell.h"
+#import "SWCommonSwitchItem.h"
+#import "SWCommonArrowItem.h"
+#import "SWCommonLabelItem.h"
 
 @interface SWDiscoverTableViewController ()
 @property (nonatomic, strong) NSMutableArray *groups;
@@ -46,6 +49,7 @@
     [self setupSearchBar];
     //设置tableView的属性
     self.tableView.backgroundColor = SWGlobalBackground;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = SWStatusCellMargin;
     self.tableView.contentInset = UIEdgeInsetsMake(SWStatusCellMargin - 30, 0, 0, 0);
@@ -67,15 +71,12 @@
 {
     SWCommonGroup *group = [SWCommonGroup group];
     [self.groups addObject:group];
-    //设置组数据
-    group.header = @"第0组头部";
-    group.footer = @"第0组尾部";
 
     //设置组的所有行数据
-    SWCommonItem *hotStatus = [SWCommonItem itemWithTitle:@"热门微博" icon:@"hot_status"];
+    SWCommonArrowItem *hotStatus = [SWCommonArrowItem itemWithTitle:@"热门微博" icon:@"hot_status"];
     hotStatus.subtitle = @"笑话，娱乐，神最右都搬到这啦";
     
-    SWCommonItem *findPeople = [SWCommonItem itemWithTitle:@"找人" icon:@"find_people"];
+    SWCommonArrowItem *findPeople = [SWCommonArrowItem itemWithTitle:@"找人" icon:@"find_people"];
     findPeople.subtitle = @"名人、有意思的人尽在这里";
     
     group.items = @[hotStatus, findPeople];
@@ -87,9 +88,9 @@
     SWCommonGroup *group = [SWCommonGroup group];
     [self.groups addObject:group];
     //设置组的所有行数据
-    SWCommonItem *gameCenter = [SWCommonItem itemWithTitle:@"游戏中心" icon:@"game_center"];
-    SWCommonItem *near = [SWCommonItem itemWithTitle:@"周边" icon:@"near"];
-    SWCommonItem *app = [SWCommonItem itemWithTitle:@"应用" icon:@"app"];
+    SWCommonArrowItem *gameCenter = [SWCommonArrowItem itemWithTitle:@"游戏中心" icon:@"game_center"];
+    SWCommonArrowItem *near = [SWCommonArrowItem itemWithTitle:@"周边" icon:@"near"];
+    SWCommonArrowItem *app = [SWCommonArrowItem itemWithTitle:@"应用" icon:@"app"];
     
     group.items = @[gameCenter, near, app];
 }
@@ -99,11 +100,11 @@
     SWCommonGroup *group = [SWCommonGroup group];
     [self.groups addObject:group];
     // 设置组的所有行数据
-    SWCommonItem *video = [SWCommonItem itemWithTitle:@"视频" icon:@"video"];
-    SWCommonItem *music = [SWCommonItem itemWithTitle:@"音乐" icon:@"music"];
-    SWCommonItem *movie = [SWCommonItem itemWithTitle:@"电影" icon:@"movie"];
-    SWCommonItem *cast = [SWCommonItem itemWithTitle:@"播客" icon:@"cast"];
-    SWCommonItem *more = [SWCommonItem itemWithTitle:@"更多" icon:@"more"];
+    SWCommonArrowItem *video = [SWCommonArrowItem itemWithTitle:@"视频" icon:@"video"];
+    SWCommonArrowItem *music = [SWCommonArrowItem itemWithTitle:@"音乐" icon:@"music"];
+    SWCommonArrowItem *movie = [SWCommonArrowItem itemWithTitle:@"电影" icon:@"movie"];
+    SWCommonArrowItem *cast = [SWCommonArrowItem itemWithTitle:@"播客" icon:@"cast"];
+    SWCommonArrowItem *more = [SWCommonArrowItem itemWithTitle:@"更多" icon:@"more"];
     
     group.items = @[video, music, movie, cast, more];
 }
@@ -132,7 +133,8 @@
     SWCommonCell *cell = [SWCommonCell cellWithTableView:tableView];
     SWCommonGroup *group = self.groups[indexPath.section];
     cell.item = group.items[indexPath.row];
-    
+    //cell所处的行号 和所处组的总行数
+    [cell setIndexPath:indexPath rowsInSection:group.items.count];
     return cell;
 }
 

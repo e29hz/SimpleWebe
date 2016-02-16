@@ -13,9 +13,12 @@
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
+- (void)setIndexPath:(NSIndexPath *)indexPath rowsInSection:(NSUInteger)rows;
+
 /**
  *  cell对应的item数据
  */
 @property (nonatomic, strong) SWCommonItem *item;
+
 
 @end

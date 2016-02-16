@@ -12,6 +12,10 @@
 		E407171B1C71D654002775FC /* SWCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E407171A1C71D654002775FC /* SWCommonItem.m */; };
 		E407171E1C71D675002775FC /* SWCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E407171D1C71D675002775FC /* SWCommonGroup.m */; };
 		E40717211C71DD1E002775FC /* SWCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717201C71DD1E002775FC /* SWCommonCell.m */; };
+		E40717241C72C96C002775FC /* SWCommonArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717231C72C96C002775FC /* SWCommonArrowItem.m */; };
+		E40717271C72C996002775FC /* SWCommonSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717261C72C996002775FC /* SWCommonSwitchItem.m */; };
+		E407172A1C72E4A9002775FC /* SWCommonLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717291C72E4A9002775FC /* SWCommonLabelItem.m */; };
+		E407172D1C72EEF6002775FC /* SWBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E407172C1C72EEF6002775FC /* SWBadgeView.m */; };
 		E4096FE01C4E70A70031299C /* SWStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FDB1C4E70A70031299C /* SWStatusDetailView.m */; };
 		E4096FE11C4E70A70031299C /* SWStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FDD1C4E70A70031299C /* SWStatusTableViewCell.m */; };
 		E4096FE51C4E71160031299C /* SWStatusOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FE41C4E71160031299C /* SWStatusOriginalView.m */; };
@@ -122,6 +126,14 @@
 		E407171D1C71D675002775FC /* SWCommonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonGroup.m; sourceTree = "<group>"; };
 		E407171F1C71DD1E002775FC /* SWCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommonCell.h; sourceTree = "<group>"; };
 		E40717201C71DD1E002775FC /* SWCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonCell.m; sourceTree = "<group>"; };
+		E40717221C72C96C002775FC /* SWCommonArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommonArrowItem.h; sourceTree = "<group>"; };
+		E40717231C72C96C002775FC /* SWCommonArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonArrowItem.m; sourceTree = "<group>"; };
+		E40717251C72C996002775FC /* SWCommonSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommonSwitchItem.h; sourceTree = "<group>"; };
+		E40717261C72C996002775FC /* SWCommonSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonSwitchItem.m; sourceTree = "<group>"; };
+		E40717281C72E4A9002775FC /* SWCommonLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommonLabelItem.h; sourceTree = "<group>"; };
+		E40717291C72E4A9002775FC /* SWCommonLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonLabelItem.m; sourceTree = "<group>"; };
+		E407172B1C72EEF6002775FC /* SWBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBadgeView.h; sourceTree = "<group>"; };
+		E407172C1C72EEF6002775FC /* SWBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBadgeView.m; sourceTree = "<group>"; };
 		E4096FDA1C4E70A70031299C /* SWStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusDetailView.h; sourceTree = "<group>"; };
 		E4096FDB1C4E70A70031299C /* SWStatusDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusDetailView.m; sourceTree = "<group>"; };
 		E4096FDC1C4E70A70031299C /* SWStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusTableViewCell.h; sourceTree = "<group>"; };
@@ -329,6 +341,12 @@
 				E407171A1C71D654002775FC /* SWCommonItem.m */,
 				E407171C1C71D675002775FC /* SWCommonGroup.h */,
 				E407171D1C71D675002775FC /* SWCommonGroup.m */,
+				E40717221C72C96C002775FC /* SWCommonArrowItem.h */,
+				E40717231C72C96C002775FC /* SWCommonArrowItem.m */,
+				E40717251C72C996002775FC /* SWCommonSwitchItem.h */,
+				E40717261C72C996002775FC /* SWCommonSwitchItem.m */,
+				E40717281C72E4A9002775FC /* SWCommonLabelItem.h */,
+				E40717291C72E4A9002775FC /* SWCommonLabelItem.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -807,6 +825,8 @@
 				E4749FC11C40B962000593C4 /* SWTabBar.m */,
 				E407171F1C71DD1E002775FC /* SWCommonCell.h */,
 				E40717201C71DD1E002775FC /* SWCommonCell.m */,
+				E407172B1C72EEF6002775FC /* SWBadgeView.h */,
+				E407172C1C72EEF6002775FC /* SWBadgeView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1077,14 +1097,17 @@
 				E46F2E141C45F8FF008A10BA /* SWTextView.m in Sources */,
 				E491EFBA1C4D0E93008F2EF6 /* SWSendStatusResult.m in Sources */,
 				E40D1F0F1C62382500D0E758 /* SWEmotionTextView.m in Sources */,
+				E407172D1C72EEF6002775FC /* SWBadgeView.m in Sources */,
 				E424A21D1C590C3C00AFE2DA /* MJPhotoToolbar.m in Sources */,
 				E43DECB91C6F5F6000D23F9E /* SWStatusLabel.m in Sources */,
+				E40717241C72C96C002775FC /* SWCommonArrowItem.m in Sources */,
 				E41B06C71C3E7B370096B35A /* UIView+Extension.m in Sources */,
 				E491EFB61C4D0E93008F2EF6 /* SWAccount.m in Sources */,
 				E407171B1C71D654002775FC /* SWCommonItem.m in Sources */,
 				E424A21E1C590C3C00AFE2DA /* MJPhotoView.m in Sources */,
 				E448407F1C4138660088975D /* SWOAuthViewController.m in Sources */,
 				E491EF791C49EA07008F2EF6 /* SWHttpTool.m in Sources */,
+				E407172A1C72E4A9002775FC /* SWCommonLabelItem.m in Sources */,
 				E491EFBB1C4D0E93008F2EF6 /* SWUserInfoParam.m in Sources */,
 				E4D43B471C42A4C1006ED4B3 /* SWControllerTool.m in Sources */,
 				E4F472F01C3D34DF00DB75C6 /* SWDiscoverTableViewController.m in Sources */,
@@ -1134,6 +1157,7 @@
 				E419DD6B1C4F5B8000EEEFA9 /* SWStatusDetailFrame.m in Sources */,
 				E4F987051C3D16B50078E1AA /* AppDelegate.m in Sources */,
 				E4B2A44C1C54970E00396BCB /* SWStatusPhotoView.m in Sources */,
+				E40717271C72C996002775FC /* SWCommonSwitchItem.m in Sources */,
 				E4F987021C3D16B50078E1AA /* main.m in Sources */,
 				E4F472F31C3D34EE00DB75C6 /* SWProfileTableViewController.m in Sources */,
 				E424A21F1C590C3C00AFE2DA /* SDWebImageManager+MJ.m in Sources */,
