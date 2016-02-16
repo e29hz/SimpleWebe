@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		91F25869A5721F730D200532 /* libPods-SimpleWebe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFD0D43CA74CB8D104CA76C /* libPods-SimpleWebe.a */; };
 		E40717171C71B8AE002775FC /* SWCellLink.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717161C71B8AE002775FC /* SWCellLink.m */; };
+		E407171B1C71D654002775FC /* SWCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E407171A1C71D654002775FC /* SWCommonItem.m */; };
+		E407171E1C71D675002775FC /* SWCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E407171D1C71D675002775FC /* SWCommonGroup.m */; };
+		E40717211C71DD1E002775FC /* SWCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717201C71DD1E002775FC /* SWCommonCell.m */; };
 		E4096FE01C4E70A70031299C /* SWStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FDB1C4E70A70031299C /* SWStatusDetailView.m */; };
 		E4096FE11C4E70A70031299C /* SWStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FDD1C4E70A70031299C /* SWStatusTableViewCell.m */; };
 		E4096FE51C4E71160031299C /* SWStatusOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FE41C4E71160031299C /* SWStatusOriginalView.m */; };
@@ -113,6 +116,12 @@
 		D6CF028E984F43FCC90CB5D2 /* Pods-SimpleWebe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWebe.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWebe/Pods-SimpleWebe.release.xcconfig"; sourceTree = "<group>"; };
 		E40717151C71B8AE002775FC /* SWCellLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellLink.h; sourceTree = "<group>"; };
 		E40717161C71B8AE002775FC /* SWCellLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCellLink.m; sourceTree = "<group>"; };
+		E40717191C71D654002775FC /* SWCommonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommonItem.h; sourceTree = "<group>"; };
+		E407171A1C71D654002775FC /* SWCommonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonItem.m; sourceTree = "<group>"; };
+		E407171C1C71D675002775FC /* SWCommonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommonGroup.h; sourceTree = "<group>"; };
+		E407171D1C71D675002775FC /* SWCommonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonGroup.m; sourceTree = "<group>"; };
+		E407171F1C71DD1E002775FC /* SWCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommonCell.h; sourceTree = "<group>"; };
+		E40717201C71DD1E002775FC /* SWCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonCell.m; sourceTree = "<group>"; };
 		E4096FDA1C4E70A70031299C /* SWStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusDetailView.h; sourceTree = "<group>"; };
 		E4096FDB1C4E70A70031299C /* SWStatusDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusDetailView.m; sourceTree = "<group>"; };
 		E4096FDC1C4E70A70031299C /* SWStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusTableViewCell.h; sourceTree = "<group>"; };
@@ -311,6 +320,17 @@
 				6FFD0D43CA74CB8D104CA76C /* libPods-SimpleWebe.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E40717181C71D635002775FC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E40717191C71D654002775FC /* SWCommonItem.h */,
+				E407171A1C71D654002775FC /* SWCommonItem.m */,
+				E407171C1C71D675002775FC /* SWCommonGroup.h */,
+				E407171D1C71D675002775FC /* SWCommonGroup.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E4096FD91C4E70A70031299C /* Cell */ = {
@@ -758,6 +778,7 @@
 		E4F9873F1C3D16C20078E1AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E40717181C71D635002775FC /* Common */,
 				E491EFC01C4D162C008F2EF6 /* UnreadCount */,
 				E491EFA11C4D0E93008F2EF6 /* AccessToken */,
 				E491EFA61C4D0E93008F2EF6 /* HomeStatuses */,
@@ -784,6 +805,8 @@
 			children = (
 				E4749FC01C40B962000593C4 /* SWTabBar.h */,
 				E4749FC11C40B962000593C4 /* SWTabBar.m */,
+				E407171F1C71DD1E002775FC /* SWCommonCell.h */,
+				E40717201C71DD1E002775FC /* SWCommonCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1058,6 +1081,7 @@
 				E43DECB91C6F5F6000D23F9E /* SWStatusLabel.m in Sources */,
 				E41B06C71C3E7B370096B35A /* UIView+Extension.m in Sources */,
 				E491EFB61C4D0E93008F2EF6 /* SWAccount.m in Sources */,
+				E407171B1C71D654002775FC /* SWCommonItem.m in Sources */,
 				E424A21E1C590C3C00AFE2DA /* MJPhotoView.m in Sources */,
 				E448407F1C4138660088975D /* SWOAuthViewController.m in Sources */,
 				E491EF791C49EA07008F2EF6 /* SWHttpTool.m in Sources */,
@@ -1090,6 +1114,7 @@
 				E491EF9D1C4CF145008F2EF6 /* SWBaseTool.m in Sources */,
 				E491EF911C4C9EB7008F2EF6 /* SWUserTool.m in Sources */,
 				E499FCA41C4751F700CC3753 /* SWComposeToolbar.m in Sources */,
+				E407171E1C71D675002775FC /* SWCommonGroup.m in Sources */,
 				E42560EA1C4F3ED4002A34A4 /* SWStatusOriginalFrame.m in Sources */,
 				E4F472EA1C3D34BB00DB75C6 /* SWHomeTableViewController.m in Sources */,
 				E491EFB81C4D0E93008F2EF6 /* SWHomeStatusesResult.m in Sources */,
@@ -1100,6 +1125,7 @@
 				E4727B851C44C9EA00DF6CAC /* SWPhoto.m in Sources */,
 				E491EFB91C4D0E93008F2EF6 /* SWSendStatusParam.m in Sources */,
 				E4749FC91C40CA49000593C4 /* SWComposeViewController.m in Sources */,
+				E40717211C71DD1E002775FC /* SWCommonCell.m in Sources */,
 				E40717171C71B8AE002775FC /* SWCellLink.m in Sources */,
 				E41661FF1C51EB0D008AF523 /* UIImage+Extension.m in Sources */,
 				E424A21B1C590C3C00AFE2DA /* MJPhotoLoadingView.m in Sources */,

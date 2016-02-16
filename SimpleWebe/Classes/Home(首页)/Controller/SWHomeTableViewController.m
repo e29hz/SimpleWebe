@@ -43,7 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundColor = SWColor(211, 211, 211);
+    self.tableView.backgroundColor = SWGlobalBackground;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     //设置导航栏内容

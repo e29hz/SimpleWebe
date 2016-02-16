@@ -116,7 +116,7 @@
     [self addOneChildVc:discover title:@"发现" imageName:@"tabbar_discover" selectedImageName:@"tabbar_discover_selected"];
     
     SWProfileTableViewController *profile = [[SWProfileTableViewController alloc] init];
-    [self addOneChildVc:profile title:@"我的" imageName:@"tabbar_profile" selectedImageName:@"tabbar_profile_selected"];
+    [self addOneChildVc:profile title:@"我" imageName:@"tabbar_profile" selectedImageName:@"tabbar_profile_selected"];
     self.profile = profile;
 }
 
