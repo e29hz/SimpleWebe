@@ -6,8 +6,8 @@
 //  Copyright © 2016年 ehongzhen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SWCommonViewController.h"
 
-@interface SWProfileTableViewController : UITableViewController
+@interface SWProfileTableViewController : SWCommonViewController
 
 @end

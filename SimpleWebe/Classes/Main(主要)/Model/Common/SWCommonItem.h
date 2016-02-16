@@ -25,6 +25,15 @@
  *  数字标记
  */
 @property (nonatomic, copy) NSString *badgeValue;
+/**
+ *  点击的cell,需要跳转到哪个控制器
+ */
+@property (nonatomic, assign) Class destVcClass;
+/** 
+ *  封装点击这行cell想做的事情 
+ */
+// block 只能用 copy
+@property (nonatomic, copy) void (^operation)();
 
 
 + (instancetype)itemWithTitle:(NSString *)title icon:(NSString *)icon;
