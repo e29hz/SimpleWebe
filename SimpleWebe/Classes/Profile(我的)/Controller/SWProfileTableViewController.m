@@ -52,7 +52,7 @@
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据
-    SWCommonArrowItem *newFriend = [SWCommonArrowItem itemWithTitle:@"新的好友" icon:@"new_friend"];
+    SWCommonArrowItem *newFriend = [SWCommonArrowItem itemWithTitleAndImage:@"新的好友" icon:@"new_friend"];
     newFriend.badgeValue = @"5";
     
     group.items = @[newFriend];
@@ -65,14 +65,14 @@
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据
-    SWCommonArrowItem *album = [SWCommonArrowItem itemWithTitle:@"我的相册" icon:@"album"];
+    SWCommonArrowItem *album = [SWCommonArrowItem itemWithTitleAndImage:@"我的相册" icon:@"album"];
     album.subtitle = @"(100)";
     
-    SWCommonArrowItem *collect = [SWCommonArrowItem itemWithTitle:@"我的收藏" icon:@"collect"];
+    SWCommonArrowItem *collect = [SWCommonArrowItem itemWithTitleAndImage:@"我的收藏" icon:@"collect"];
     collect.subtitle = @"(10)";
     collect.badgeValue = @"1";
     
-    SWCommonArrowItem *like = [SWCommonArrowItem itemWithTitle:@"赞" icon:@"like"];
+    SWCommonArrowItem *like = [SWCommonArrowItem itemWithTitleAndImage:@"赞" icon:@"like"];
     like.subtitle = @"(36)";
     like.badgeValue = @"10";
     

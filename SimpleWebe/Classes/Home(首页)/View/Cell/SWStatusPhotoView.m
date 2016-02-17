@@ -41,7 +41,7 @@
     //下载图片
     [self sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
     
-    //控制gif突变的显示
+    //控制gif图片的显示
     NSString *extension = photo.thumbnail_pic.pathExtension.lowercaseString;
     self.gifView.hidden = ![extension isEqualToString:@"gif"];
     

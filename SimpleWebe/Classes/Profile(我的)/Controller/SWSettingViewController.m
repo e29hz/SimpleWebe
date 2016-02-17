@@ -13,6 +13,7 @@
 #import "SWCommonSwitchItem.h"
 #import "SWCommonLabelItem.h"
 #import "SWGeneralSettingViewController.h"
+#import "SWCommonCenterItem.h"
 
 @interface SWSettingViewController ()
 
@@ -44,7 +45,7 @@
     [logout setBackgroundImage:[UIImage resizedImage:@"common_card_background_highlighted"] forState:UIControlStateHighlighted];
     
     // 3.设置尺寸(tableFooterView和tableHeaderView的宽度跟tableView的宽度一样)
-    logout.height = 35;
+    logout.height = 44;
     
     self.tableView.tableFooterView = logout;
 }
@@ -63,7 +64,7 @@
 {
     // 1.创建组
     SWCommonGroup *group = [SWCommonGroup group];
-    group.footer = @"tail部";
+//    group.footer = @"tail部";
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据
@@ -88,12 +89,12 @@
 {
     // 1.创建组
     SWCommonGroup *group = [SWCommonGroup group];
-    group.header = @"头部";
+//    group.header = @"头部";
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据
     SWCommonArrowItem *generalSetting = [SWCommonArrowItem itemWithTitle:@"通用设置"];
-    generalSetting.destVcClass = [SWSettingViewController class];
+    generalSetting.destVcClass = [SWGeneralSettingViewController class];
     
     group.items = @[generalSetting];
 }

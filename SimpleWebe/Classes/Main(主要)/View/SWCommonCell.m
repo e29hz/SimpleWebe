@@ -115,7 +115,9 @@
     _item = item;
     
     // 1.设置基本数据
-    self.imageView.image = [UIImage imageNamed:item.icon];
+    if (item.icon) {
+        self.imageView.image = [UIImage imageNamed:item.icon];
+    }
     self.textLabel.text = item.title;
     self.detailTextLabel.text = item.subtitle;
     
@@ -151,13 +153,13 @@
     if (rows == 1) {
         backgroundImage.image = [UIImage resizedImage:@"common_card_background"];
         selectedBackgroundImage.image = [UIImage resizedImage:@"common_card_background_highlighted"];
-    } else if (indexPath.row == 0) { //首行
+    } else if (indexPath.row == 0) { // 首行
         backgroundImage.image = [UIImage resizedImage:@"common_card_top_background"];
         selectedBackgroundImage.image = [UIImage resizedImage:@"common_card_top_background_highlighted"];
-    } else if (indexPath.row == rows - 1) { //最后一行
+    } else if (indexPath.row == rows - 1) { // 末行
         backgroundImage.image = [UIImage resizedImage:@"common_card_bottom_background"];
         selectedBackgroundImage.image = [UIImage resizedImage:@"common_card_bottom_background_highlighted"];
-    } else  { //中间
+    } else { // 中间
         backgroundImage.image = [UIImage resizedImage:@"common_card_middle_background"];
         selectedBackgroundImage.image = [UIImage resizedImage:@"common_card_middle_background_highlighted"];
     }

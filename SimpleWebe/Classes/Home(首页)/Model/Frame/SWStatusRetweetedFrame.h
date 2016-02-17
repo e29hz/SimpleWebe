@@ -30,4 +30,8 @@
  *  配图
  */
 @property (nonatomic, assign) CGRect photosFrame;
+/**
+ *  工具条
+ */
+@property (nonatomic, assign) CGRect toolbarFrame;
 @end

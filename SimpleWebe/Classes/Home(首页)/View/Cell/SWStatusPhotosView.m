@@ -139,7 +139,7 @@
         photosW = totalCols * SWStatusPhotoW + (totalCols - 1) * SWStatusPhotoMargin;
         photosH = totalRows * SWStatusPhotoH + (totalRows - 1) * SWStatusPhotoMargin;
     }
-        return CGSizeMake(photosW, photosH);
+    return CGSizeMake(photosW, photosH);
 
 }
 

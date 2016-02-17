@@ -11,6 +11,8 @@
 #import "SWHomeStatusesResult.h"
 #import "SWSendStatusParam.h"
 #import "SWSendStatusResult.h"
+#import "SWCommentsParam.h"
+#import "SWCommentsResult.h"
 #import "SWBaseTool.h"
 
 @interface SWStatusTool : NSObject
@@ -31,5 +33,9 @@
  *  @param failure 请求失败的回调
  */
 + (void)sendStatusWithParam:(SWSendStatusParam *)sendStatusesParam success:(void (^)(SWSendStatusResult *result))success failure:(void(^)(NSError *error))failure;
+/**
+ *  加载评论数据
+ */
++ (void)commentsWithParam:(SWCommentsParam *)param success:(void (^)(SWCommentsResult *result))success failure:(void (^)(NSError *error))failure;
 
 @end

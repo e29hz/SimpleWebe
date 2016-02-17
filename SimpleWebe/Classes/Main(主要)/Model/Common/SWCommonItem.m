@@ -9,7 +9,7 @@
 #import "SWCommonItem.h"
 
 @implementation SWCommonItem
-+ (instancetype)itemWithTitle:(NSString *)title icon:(NSString *)icon
++ (instancetype)itemWithTitleAndImage:(NSString *)title icon:(NSString *)icon
 {
     SWCommonItem *item = [[self alloc] init];
     item.title = title;
@@ -19,6 +19,8 @@
 
 + (instancetype)itemWithTitle:(NSString *)title
 {
-    return [self itemWithTitle:title icon:nil];
+    SWCommonItem *item = [[self alloc] init];
+    item.title = title;
+    return item;
 }
 @end

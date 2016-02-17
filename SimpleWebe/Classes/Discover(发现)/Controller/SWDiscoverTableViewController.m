@@ -43,11 +43,11 @@
     [self.groups addObject:group];
 
     //设置组的所有行数据
-    SWCommonArrowItem *hotStatus = [SWCommonArrowItem itemWithTitle:@"热门微博" icon:@"hot_status"];
+    SWCommonArrowItem *hotStatus = [SWCommonArrowItem itemWithTitleAndImage:@"热门微博" icon:@"hot_status"];
     hotStatus.subtitle = @"笑话，娱乐，神最右都搬到这啦";
     hotStatus.destVcClass = [self class];
     
-    SWCommonArrowItem *findPeople = [SWCommonArrowItem itemWithTitle:@"找人" icon:@"find_people"];
+    SWCommonArrowItem *findPeople = [SWCommonArrowItem itemWithTitleAndImage:@"找人" icon:@"find_people"];
     findPeople.subtitle = @"名人、有意思的人尽在这里";
     
     group.items = @[hotStatus, findPeople];
@@ -59,10 +59,10 @@
     SWCommonGroup *group = [SWCommonGroup group];
     [self.groups addObject:group];
     //设置组的所有行数据
-    SWCommonArrowItem *gameCenter = [SWCommonArrowItem itemWithTitle:@"游戏中心" icon:@"game_center"];
+    SWCommonArrowItem *gameCenter = [SWCommonArrowItem itemWithTitleAndImage:@"游戏中心" icon:@"game_center"];
     gameCenter.badgeValue = @"99";
-    SWCommonArrowItem *near = [SWCommonArrowItem itemWithTitle:@"周边" icon:@"near"];
-    SWCommonArrowItem *app = [SWCommonArrowItem itemWithTitle:@"应用" icon:@"app"];
+    SWCommonArrowItem *near = [SWCommonArrowItem itemWithTitleAndImage:@"周边" icon:@"near"];
+    SWCommonArrowItem *app = [SWCommonArrowItem itemWithTitleAndImage:@"应用" icon:@"app"];
     
     group.items = @[gameCenter, near, app];
 }
@@ -72,23 +72,23 @@
     SWCommonGroup *group = [SWCommonGroup group];
     [self.groups addObject:group];
     // 设置组的所有行数据
-    SWCommonArrowItem *video = [SWCommonArrowItem itemWithTitle:@"视频" icon:@"video"];
+    SWCommonArrowItem *video = [SWCommonArrowItem itemWithTitleAndImage:@"视频" icon:@"video"];
     video.operation = ^{
         SWLog(@"---点击了视频---");
     };
-    SWCommonArrowItem *music = [SWCommonArrowItem itemWithTitle:@"音乐" icon:@"music"];
+    SWCommonArrowItem *music = [SWCommonArrowItem itemWithTitleAndImage:@"音乐" icon:@"music"];
     music.operation = ^{
         SWLog(@"---点击了音乐---");
     };
-    SWCommonArrowItem *movie = [SWCommonArrowItem itemWithTitle:@"电影" icon:@"movie"];
+    SWCommonArrowItem *movie = [SWCommonArrowItem itemWithTitleAndImage:@"电影" icon:@"movie"];
     movie.operation = ^{
         SWLog(@"---点击了电影---");
     };
-    SWCommonArrowItem *cast = [SWCommonArrowItem itemWithTitle:@"播客" icon:@"cast"];
+    SWCommonArrowItem *cast = [SWCommonArrowItem itemWithTitleAndImage:@"播客" icon:@"cast"];
     cast.operation = ^{
         SWLog(@"---点击了播客---");
     };
-    SWCommonArrowItem *more = [SWCommonArrowItem itemWithTitle:@"更多" icon:@"more"];
+    SWCommonArrowItem *more = [SWCommonArrowItem itemWithTitleAndImage:@"更多" icon:@"more"];
     more.operation = ^{
         SWLog(@"---点击了更多---");
     };

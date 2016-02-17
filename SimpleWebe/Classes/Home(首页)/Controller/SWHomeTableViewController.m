@@ -18,6 +18,7 @@
 #import "SWUserInfoResult.h"
 #import "SWUserTool.h"
 #import "SWStatusTableViewCell.h"
+#import "SWStatusDetailViewController.h"
 
 @interface SWHomeTableViewController ()
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -327,13 +328,6 @@
     return cell;
 }
 #pragma mark - tableView代理方法
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UIViewController *newVc = [[UIViewController alloc] init];
-    newVc.view.backgroundColor = SWRandomColor;
-    newVc.title = @"newVc";
-    [self.navigationController pushViewController:newVc animated:YES];
-}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -362,4 +356,13 @@
     SWStatusFrame *frame = self.statusFrames[indexPath.row];
     return frame.cellHeight;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWStatusDetailViewController *detailVc = [[SWStatusDetailViewController alloc] init];
+    SWStatusFrame *frame = self.statusFrames[indexPath.row];
+    detailVc.status = frame.status;
+    [self.navigationController pushViewController:detailVc animated:YES];
+}
+
 @end

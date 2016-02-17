@@ -70,4 +70,10 @@
  */
 @property (nonatomic, strong) NSArray *pic_urls;
 
+/**
+ *  这个数据是否展示在微博正文页面
+ */
+@property (nonatomic, assign, getter=isDetail) BOOL detail;
+
+
 @end

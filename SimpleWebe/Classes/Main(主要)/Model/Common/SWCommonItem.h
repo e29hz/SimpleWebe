@@ -36,6 +36,6 @@
 @property (nonatomic, copy) void (^operation)();
 
 
-+ (instancetype)itemWithTitle:(NSString *)title icon:(NSString *)icon;
++ (instancetype)itemWithTitleAndImage:(NSString *)title icon:(NSString *)icon;
 + (instancetype)itemWithTitle:(NSString *)title;
 @end

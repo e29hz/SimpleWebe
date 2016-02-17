@@ -1,26 +1,23 @@
 //
-//  SWStatusToolbar.m
+//  SWBaseToolbar.m
 //  SimpleWebe
 //
-//  Created by 鄂鸿桢 on 16/1/19.
+//  Created by 鄂鸿桢 on 16/2/16.
 //  Copyright © 2016年 ehongzhen. All rights reserved.
 //
 
-#import "SWStatusToolbar.h"
+#import "SWBaseToolbar.h"
 #import "SWStatus.h"
 
-@interface SWStatusToolbar ()
-
+@interface SWBaseToolbar()
 @property (nonatomic, strong) NSMutableArray *btns;
-@property (nonatomic, strong) NSMutableArray *dividers;
 @property (nonatomic, weak) UIButton *repostsBtn;
 @property (nonatomic, weak) UIButton *commentsBtn;
 @property (nonatomic, weak) UIButton *attitudesBtn;
-
 @end
 
-@implementation SWStatusToolbar
-#pragma mark - 懒加载
+@implementation SWBaseToolbar
+
 - (NSMutableArray *)btns
 {
     if (_btns == nil) {
@@ -29,27 +26,14 @@
     return _btns;
 }
 
-- (NSMutableArray *)dividers
-{
-    if (_dividers == nil) {
-        self.dividers = [NSMutableArray array];
-    }
-    return _dividers;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.userInteractionEnabled = YES;
-        self.image = [UIImage resizedImage:@"timeline_card_bottom_background"];
-        
-        self.repostsBtn = [self setupBtnWithIcon:@"timeline_icon_retweet"];
-        self.commentsBtn = [self setupBtnWithIcon:@"timeline_icon_comment"];
-        self.attitudesBtn =[self setupBtnWithIcon:@"timeline_icon_unlike"];
-        
-        [self setupDivider];
-        [self setupDivider];
+        self.backgroundColor = [UIColor clearColor];
+        self.repostsBtn = [self setupBtnWithIcon:@"timeline_icon_retweet" title:@"转发"];
+        self.commentsBtn = [self setupBtnWithIcon:@"timeline_icon_comment" title:@"评论"];
+        self.attitudesBtn =[self setupBtnWithIcon:@"timeline_icon_unlike" title:@"赞"];
     }
     return self;
 }
@@ -60,10 +44,11 @@
  *  @param icon  图标
  *  @param title 标题
  */
-- (UIButton *)setupBtnWithIcon:(NSString *)icon
+- (UIButton *)setupBtnWithIcon:(NSString *)icon title:(NSString *)title
 {
     UIButton *btn = [[UIButton alloc] init];
     [btn setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:13];
     
@@ -77,47 +62,28 @@
     [self addSubview:btn];
     
     [self.btns addObject:btn];
-    return btn;
-}
-
-/**
- *  分割线
- */
-- (void)setupDivider
-{
-    UIImageView *divider = [[UIImageView alloc] init];
-    divider.image = [UIImage imageNamed:@"timeline_card_bottom_line"];
-    divider.contentMode = UIViewContentModeCenter;
-    [self addSubview:divider];
     
-    [self.dividers addObject:divider];
+    return btn;
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    //设置按钮的frame
+    
+    // 设置按钮的frame
     int btnCount = (int)self.btns.count;
     CGFloat btnW = self.width / btnCount;
     CGFloat btnH = self.height;
-    for (int i = 0; i < btnCount; i++) {
+    for (int i = 0; i<btnCount; i++) {
         UIButton *btn = self.btns[i];
         btn.width = btnW;
         btn.height = btnH;
         btn.y = 0;
-        btn.x = btnW * i;
-    }
-    
-    //设置分割线的frame
-    int dividerCount = (int)self.dividers.count;
-    for (int i = 0; i < dividerCount; i++) {
-        UIImageView *divider = self.dividers[i];
-        divider.width = 1;
-        divider.height = btnH;
-        divider.centerX = (i + 1) * btnW;
-        divider.centerY = btnH / 2;
+        btn.x = i * btnW;
     }
 }
+
+
 - (void)setStatus:(SWStatus *)status
 {
     _status = status;
@@ -145,5 +111,6 @@
     }
     [button setTitle:defaultTitle forState:UIControlStateNormal];
 }
+
 
 @end

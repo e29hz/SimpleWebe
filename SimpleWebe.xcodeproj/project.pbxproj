@@ -19,11 +19,14 @@
 		E40717301C730288002775FC /* SWCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E407172F1C730288002775FC /* SWCommonViewController.m */; };
 		E40717361C73049E002775FC /* SWSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717351C73049E002775FC /* SWSettingViewController.m */; };
 		E40717391C730527002775FC /* SWGeneralSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717381C730527002775FC /* SWGeneralSettingViewController.m */; };
+		E407173C1C7307CA002775FC /* SWCommonCenterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E407173B1C7307CA002775FC /* SWCommonCenterItem.m */; };
+		E407173F1C7310F4002775FC /* SWStatusDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E407173E1C7310F4002775FC /* SWStatusDetailViewController.m */; };
+		E407174D1C73443D002775FC /* SWBaseToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E40717481C73443D002775FC /* SWBaseToolbar.m */; };
+		E407174F1C73443D002775FC /* SWStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E407174C1C73443D002775FC /* SWStatusToolbar.m */; };
 		E4096FE01C4E70A70031299C /* SWStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FDB1C4E70A70031299C /* SWStatusDetailView.m */; };
 		E4096FE11C4E70A70031299C /* SWStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FDD1C4E70A70031299C /* SWStatusTableViewCell.m */; };
 		E4096FE51C4E71160031299C /* SWStatusOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FE41C4E71160031299C /* SWStatusOriginalView.m */; };
 		E4096FE81C4E712C0031299C /* SWStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FE71C4E712C0031299C /* SWStatusRetweetedView.m */; };
-		E4096FEB1C4E71A80031299C /* SWStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E4096FEA1C4E71A80031299C /* SWStatusToolbar.m */; };
 		E40D1EFB1C5C7D4A00D0E758 /* SWEmotionGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D1EFA1C5C7D4A00D0E758 /* SWEmotionGridView.m */; };
 		E40D1EFE1C5CE2AB00D0E758 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D1EFD1C5CE2AB00D0E758 /* NSString+Emoji.m */; };
 		E40D1F011C5CFB0500D0E758 /* SWEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E40D1F001C5CFB0500D0E758 /* SWEmotionView.m */; };
@@ -52,6 +55,13 @@
 		E424A22F1C5A366700AFE2DA /* SWEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = E424A22E1C5A366700AFE2DA /* SWEmotion.m */; };
 		E42560E71C4F3E6E002A34A4 /* SWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E42560E61C4F3E6E002A34A4 /* SWStatusFrame.m */; };
 		E42560EA1C4F3ED4002A34A4 /* SWStatusOriginalFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E42560E91C4F3ED4002A34A4 /* SWStatusOriginalFrame.m */; };
+		E42DC2251C7358A00076D34E /* SWStatusRetweetedToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2241C7358A00076D34E /* SWStatusRetweetedToolbar.m */; };
+		E42DC2281C7358B50076D34E /* SWStatusDetailBottomToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2271C7358B50076D34E /* SWStatusDetailBottomToolbar.m */; };
+		E42DC22B1C7359290076D34E /* SWStatusDetailTopToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC22A1C7359290076D34E /* SWStatusDetailTopToolbar.m */; };
+		E42DC22D1C7362170076D34E /* SWStatusDetailTopToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42DC22C1C7362170076D34E /* SWStatusDetailTopToolbar.xib */; };
+		E42DC2341C74B1B40076D34E /* SWCommentsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2331C74B1B40076D34E /* SWCommentsResult.m */; };
+		E42DC2371C74B21F0076D34E /* SWComment.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2361C74B21F0076D34E /* SWComment.m */; };
+		E42DC23A1C74B53C0076D34E /* SWCommentsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2391C74B53C0076D34E /* SWCommentsParam.m */; };
 		E43DECB61C6AF80900D23F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E43DECB51C6AF80900D23F9E /* Assets.xcassets */; };
 		E43DECB91C6F5F6000D23F9E /* SWStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43DECB81C6F5F6000D23F9E /* SWStatusLabel.m */; };
 		E448407F1C4138660088975D /* SWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E448407E1C4138660088975D /* SWOAuthViewController.m */; };
@@ -143,6 +153,14 @@
 		E40717351C73049E002775FC /* SWSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingViewController.m; sourceTree = "<group>"; };
 		E40717371C730527002775FC /* SWGeneralSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGeneralSettingViewController.h; sourceTree = "<group>"; };
 		E40717381C730527002775FC /* SWGeneralSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGeneralSettingViewController.m; sourceTree = "<group>"; };
+		E407173A1C7307CA002775FC /* SWCommonCenterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommonCenterItem.h; sourceTree = "<group>"; };
+		E407173B1C7307CA002775FC /* SWCommonCenterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommonCenterItem.m; sourceTree = "<group>"; };
+		E407173D1C7310F4002775FC /* SWStatusDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusDetailViewController.h; sourceTree = "<group>"; };
+		E407173E1C7310F4002775FC /* SWStatusDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusDetailViewController.m; sourceTree = "<group>"; };
+		E40717471C73443D002775FC /* SWBaseToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBaseToolbar.h; sourceTree = "<group>"; };
+		E40717481C73443D002775FC /* SWBaseToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBaseToolbar.m; sourceTree = "<group>"; };
+		E407174B1C73443D002775FC /* SWStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusToolbar.h; sourceTree = "<group>"; };
+		E407174C1C73443D002775FC /* SWStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusToolbar.m; sourceTree = "<group>"; };
 		E4096FDA1C4E70A70031299C /* SWStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusDetailView.h; sourceTree = "<group>"; };
 		E4096FDB1C4E70A70031299C /* SWStatusDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusDetailView.m; sourceTree = "<group>"; };
 		E4096FDC1C4E70A70031299C /* SWStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusTableViewCell.h; sourceTree = "<group>"; };
@@ -151,8 +169,6 @@
 		E4096FE41C4E71160031299C /* SWStatusOriginalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusOriginalView.m; sourceTree = "<group>"; };
 		E4096FE61C4E712C0031299C /* SWStatusRetweetedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusRetweetedView.h; sourceTree = "<group>"; };
 		E4096FE71C4E712C0031299C /* SWStatusRetweetedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusRetweetedView.m; sourceTree = "<group>"; };
-		E4096FE91C4E71A80031299C /* SWStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusToolbar.h; sourceTree = "<group>"; };
-		E4096FEA1C4E71A80031299C /* SWStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusToolbar.m; sourceTree = "<group>"; };
 		E40D1EF91C5C7D4A00D0E758 /* SWEmotionGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWEmotionGridView.h; sourceTree = "<group>"; };
 		E40D1EFA1C5C7D4A00D0E758 /* SWEmotionGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWEmotionGridView.m; sourceTree = "<group>"; };
 		E40D1EFC1C5CE2AB00D0E758 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
@@ -207,6 +223,19 @@
 		E42560E61C4F3E6E002A34A4 /* SWStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusFrame.m; sourceTree = "<group>"; };
 		E42560E81C4F3ED4002A34A4 /* SWStatusOriginalFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusOriginalFrame.h; sourceTree = "<group>"; };
 		E42560E91C4F3ED4002A34A4 /* SWStatusOriginalFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusOriginalFrame.m; sourceTree = "<group>"; };
+		E42DC2231C7358A00076D34E /* SWStatusRetweetedToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusRetweetedToolbar.h; sourceTree = "<group>"; };
+		E42DC2241C7358A00076D34E /* SWStatusRetweetedToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusRetweetedToolbar.m; sourceTree = "<group>"; };
+		E42DC2261C7358B50076D34E /* SWStatusDetailBottomToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusDetailBottomToolbar.h; sourceTree = "<group>"; };
+		E42DC2271C7358B50076D34E /* SWStatusDetailBottomToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusDetailBottomToolbar.m; sourceTree = "<group>"; };
+		E42DC2291C7359290076D34E /* SWStatusDetailTopToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusDetailTopToolbar.h; sourceTree = "<group>"; };
+		E42DC22A1C7359290076D34E /* SWStatusDetailTopToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusDetailTopToolbar.m; sourceTree = "<group>"; };
+		E42DC22C1C7362170076D34E /* SWStatusDetailTopToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWStatusDetailTopToolbar.xib; sourceTree = "<group>"; };
+		E42DC2321C74B1B40076D34E /* SWCommentsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommentsResult.h; sourceTree = "<group>"; };
+		E42DC2331C74B1B40076D34E /* SWCommentsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommentsResult.m; sourceTree = "<group>"; };
+		E42DC2351C74B21F0076D34E /* SWComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWComment.h; sourceTree = "<group>"; };
+		E42DC2361C74B21F0076D34E /* SWComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWComment.m; sourceTree = "<group>"; };
+		E42DC2381C74B53C0076D34E /* SWCommentsParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommentsParam.h; sourceTree = "<group>"; };
+		E42DC2391C74B53C0076D34E /* SWCommentsParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommentsParam.m; sourceTree = "<group>"; };
 		E43DECB51C6AF80900D23F9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E43DECB71C6F5F6000D23F9E /* SWStatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusLabel.h; sourceTree = "<group>"; };
 		E43DECB81C6F5F6000D23F9E /* SWStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusLabel.m; sourceTree = "<group>"; };
@@ -356,13 +385,28 @@
 				E40717261C72C996002775FC /* SWCommonSwitchItem.m */,
 				E40717281C72E4A9002775FC /* SWCommonLabelItem.h */,
 				E40717291C72E4A9002775FC /* SWCommonLabelItem.m */,
+				E407173A1C7307CA002775FC /* SWCommonCenterItem.h */,
+				E407173B1C7307CA002775FC /* SWCommonCenterItem.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E40717461C73443D002775FC /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				E40717471C73443D002775FC /* SWBaseToolbar.h */,
+				E40717481C73443D002775FC /* SWBaseToolbar.m */,
+				E407174B1C73443D002775FC /* SWStatusToolbar.h */,
+				E407174C1C73443D002775FC /* SWStatusToolbar.m */,
+			);
+			path = Toolbar;
 			sourceTree = "<group>";
 		};
 		E4096FD91C4E70A70031299C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E42DC2221C7358A00076D34E /* Detail */,
+				E40717461C73443D002775FC /* Toolbar */,
 				E4096FDC1C4E70A70031299C /* SWStatusTableViewCell.h */,
 				E4096FDD1C4E70A70031299C /* SWStatusTableViewCell.m */,
 				E4096FDA1C4E70A70031299C /* SWStatusDetailView.h */,
@@ -371,8 +415,6 @@
 				E4096FE41C4E71160031299C /* SWStatusOriginalView.m */,
 				E4096FE61C4E712C0031299C /* SWStatusRetweetedView.h */,
 				E4096FE71C4E712C0031299C /* SWStatusRetweetedView.m */,
-				E4096FE91C4E71A80031299C /* SWStatusToolbar.h */,
-				E4096FEA1C4E71A80031299C /* SWStatusToolbar.m */,
 				E4B2A4471C5496ED00396BCB /* SWStatusPhotosView.h */,
 				E4B2A4481C5496ED00396BCB /* SWStatusPhotosView.m */,
 				E4B2A44A1C54970E00396BCB /* SWStatusPhotoView.h */,
@@ -451,6 +493,31 @@
 				E40717161C71B8AE002775FC /* SWCellLink.m */,
 			);
 			path = Frame;
+			sourceTree = "<group>";
+		};
+		E42DC2221C7358A00076D34E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E42DC2231C7358A00076D34E /* SWStatusRetweetedToolbar.h */,
+				E42DC2241C7358A00076D34E /* SWStatusRetweetedToolbar.m */,
+				E42DC2261C7358B50076D34E /* SWStatusDetailBottomToolbar.h */,
+				E42DC2271C7358B50076D34E /* SWStatusDetailBottomToolbar.m */,
+				E42DC2291C7359290076D34E /* SWStatusDetailTopToolbar.h */,
+				E42DC22A1C7359290076D34E /* SWStatusDetailTopToolbar.m */,
+				E42DC22C1C7362170076D34E /* SWStatusDetailTopToolbar.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E42DC22E1C74B1350076D34E /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				E42DC2321C74B1B40076D34E /* SWCommentsResult.h */,
+				E42DC2331C74B1B40076D34E /* SWCommentsResult.m */,
+				E42DC2381C74B53C0076D34E /* SWCommentsParam.h */,
+				E42DC2391C74B53C0076D34E /* SWCommentsParam.m */,
+			);
+			path = Comments;
 			sourceTree = "<group>";
 		};
 		E44840791C4138180088975D /* OAuth(授权) */ = {
@@ -729,6 +796,8 @@
 			children = (
 				E4F472E81C3D34BB00DB75C6 /* SWHomeTableViewController.h */,
 				E4F472E91C3D34BB00DB75C6 /* SWHomeTableViewController.m */,
+				E407173D1C7310F4002775FC /* SWStatusDetailViewController.h */,
+				E407173E1C7310F4002775FC /* SWStatusDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -745,6 +814,8 @@
 				E4727B841C44C9EA00DF6CAC /* SWPhoto.m */,
 				E412EDCA1C68CCF400B6FF72 /* SWRegexResult.h */,
 				E412EDCB1C68CCF400B6FF72 /* SWRegexResult.m */,
+				E42DC2351C74B21F0076D34E /* SWComment.h */,
+				E42DC2361C74B21F0076D34E /* SWComment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -807,6 +878,7 @@
 		E4F9873F1C3D16C20078E1AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E42DC22E1C74B1350076D34E /* Comments */,
 				E40717181C71D635002775FC /* Common */,
 				E491EFC01C4D162C008F2EF6 /* UnreadCount */,
 				E491EFA11C4D0E93008F2EF6 /* AccessToken */,
@@ -1027,6 +1099,7 @@
 			files = (
 				E4968E2B1C4538A700CCE503 /* SWLoadMoreFooter.xib in Resources */,
 				E424A2191C590C3C00AFE2DA /* MJPhotoBrowser.bundle in Resources */,
+				E42DC22D1C7362170076D34E /* SWStatusDetailTopToolbar.xib in Resources */,
 				E46E8F4A1C6AD54D00BA43CA /* EmotionIcons in Resources */,
 				E40D1F061C5DA94200D0E758 /* SWEmotionPopView.xib in Resources */,
 				E43DECB61C6AF80900D23F9E /* Assets.xcassets in Resources */,
@@ -1107,7 +1180,9 @@
 				E42560E71C4F3E6E002A34A4 /* SWStatusFrame.m in Sources */,
 				E4096FE81C4E712C0031299C /* SWStatusRetweetedView.m in Sources */,
 				E412EDC91C68C5F600B6FF72 /* SWEmotionTextAttachment.m in Sources */,
+				E42DC22B1C7359290076D34E /* SWStatusDetailTopToolbar.m in Sources */,
 				E491EF761C47DFAD008F2EF6 /* SWComposePhotosView.m in Sources */,
+				E42DC2371C74B21F0076D34E /* SWComment.m in Sources */,
 				E41B06CA1C3E84540096B35A /* UIBarButtonItem+SWExtension.m in Sources */,
 				E46F2E141C45F8FF008A10BA /* SWTextView.m in Sources */,
 				E491EFBA1C4D0E93008F2EF6 /* SWSendStatusResult.m in Sources */,
@@ -1124,6 +1199,7 @@
 				E448407F1C4138660088975D /* SWOAuthViewController.m in Sources */,
 				E491EF791C49EA07008F2EF6 /* SWHttpTool.m in Sources */,
 				E407172A1C72E4A9002775FC /* SWCommonLabelItem.m in Sources */,
+				E42DC2341C74B1B40076D34E /* SWCommentsResult.m in Sources */,
 				E491EFBB1C4D0E93008F2EF6 /* SWUserInfoParam.m in Sources */,
 				E4D43B471C42A4C1006ED4B3 /* SWControllerTool.m in Sources */,
 				E4F472F01C3D34DF00DB75C6 /* SWDiscoverTableViewController.m in Sources */,
@@ -1131,11 +1207,11 @@
 				E4D43B4F1C43FF2F006ED4B3 /* Foundation+Log.m in Sources */,
 				E491EFB71C4D0E93008F2EF6 /* SWHomeStatusesParam.m in Sources */,
 				E424A2291C5A293700AFE2DA /* SWEmotionListView.m in Sources */,
-				E4096FEB1C4E71A80031299C /* SWStatusToolbar.m in Sources */,
 				E491EFC61C4D16BC008F2EF6 /* SWUnreadCountResult.m in Sources */,
 				E4096FE11C4E70A70031299C /* SWStatusTableViewCell.m in Sources */,
 				E4B2A4491C5496ED00396BCB /* SWStatusPhotosView.m in Sources */,
 				E4755DBA1C44AE9200625D66 /* SWStatus.m in Sources */,
+				E407173F1C7310F4002775FC /* SWStatusDetailViewController.m in Sources */,
 				E4096FE01C4E70A70031299C /* SWStatusDetailView.m in Sources */,
 				E40D1EFB1C5C7D4A00D0E758 /* SWEmotionGridView.m in Sources */,
 				E491EFBF1C4D116A008F2EF6 /* SWBaseParam.m in Sources */,
@@ -1143,9 +1219,11 @@
 				E491EFBC1C4D0E93008F2EF6 /* SWUserInfoResult.m in Sources */,
 				E40717301C730288002775FC /* SWCommonViewController.m in Sources */,
 				E424A2181C590C3C00AFE2DA /* MJPhoto.m in Sources */,
+				E42DC23A1C74B53C0076D34E /* SWCommentsParam.m in Sources */,
 				E4F472ED1C3D34CA00DB75C6 /* SWMessageTableViewController.m in Sources */,
 				E491EFC31C4D164D008F2EF6 /* SWUnreadCountParam.m in Sources */,
 				E40D1F0C1C5FA78200D0E758 /* SWEmotionTool.m in Sources */,
+				E42DC2281C7358B50076D34E /* SWStatusDetailBottomToolbar.m in Sources */,
 				E491EF7C1C4BCB73008F2EF6 /* SWStatusTool.m in Sources */,
 				E419DD6E1C4FD49700EEEFA9 /* SWStatusRetweetedFrame.m in Sources */,
 				E40D1EFE1C5CE2AB00D0E758 /* NSString+Emoji.m in Sources */,
@@ -1154,6 +1232,7 @@
 				E491EF9D1C4CF145008F2EF6 /* SWBaseTool.m in Sources */,
 				E491EF911C4C9EB7008F2EF6 /* SWUserTool.m in Sources */,
 				E499FCA41C4751F700CC3753 /* SWComposeToolbar.m in Sources */,
+				E407174F1C73443D002775FC /* SWStatusToolbar.m in Sources */,
 				E407171E1C71D675002775FC /* SWCommonGroup.m in Sources */,
 				E42560EA1C4F3ED4002A34A4 /* SWStatusOriginalFrame.m in Sources */,
 				E4F472EA1C3D34BB00DB75C6 /* SWHomeTableViewController.m in Sources */,
@@ -1168,6 +1247,7 @@
 				E40717211C71DD1E002775FC /* SWCommonCell.m in Sources */,
 				E40717171C71B8AE002775FC /* SWCellLink.m in Sources */,
 				E41661FF1C51EB0D008AF523 /* UIImage+Extension.m in Sources */,
+				E407173C1C7307CA002775FC /* SWCommonCenterItem.m in Sources */,
 				E424A21B1C590C3C00AFE2DA /* MJPhotoLoadingView.m in Sources */,
 				E491EFB51C4D0E93008F2EF6 /* SWAccessTokenParam.m in Sources */,
 				E40D1F011C5CFB0500D0E758 /* SWEmotionView.m in Sources */,
@@ -1177,6 +1257,7 @@
 				E40717271C72C996002775FC /* SWCommonSwitchItem.m in Sources */,
 				E40717361C73049E002775FC /* SWSettingViewController.m in Sources */,
 				E4F987021C3D16B50078E1AA /* main.m in Sources */,
+				E42DC2251C7358A00076D34E /* SWStatusRetweetedToolbar.m in Sources */,
 				E4F472F31C3D34EE00DB75C6 /* SWProfileTableViewController.m in Sources */,
 				E424A21F1C590C3C00AFE2DA /* SDWebImageManager+MJ.m in Sources */,
 				E424A22C1C5A345500AFE2DA /* SWEmotionToolbar.m in Sources */,
@@ -1185,6 +1266,7 @@
 				E4755DB71C44ACAF00625D66 /* SWUser.m in Sources */,
 				E424A21C1C590C3C00AFE2DA /* MJPhotoProgressView.m in Sources */,
 				E4D43B4D1C43CD90006ED4B3 /* SWAccountTool.m in Sources */,
+				E407174D1C73443D002775FC /* SWBaseToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
