@@ -45,7 +45,16 @@
     CGFloat textY = CGRectGetMaxY(self.iconFrame) + SWStatusCellInset;
     CGFloat maxW = SWScreenW - 2 * textX;
     CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
-    CGSize textSize = [status.attributedText boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+    
+    // 删掉最前面的昵称
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithAttributedString:status.attributedText];
+    if (status.isRetweeted) {
+        NSInteger len = status.user.name.length + 3;
+        [text deleteCharactersInRange:NSMakeRange(0, len)];
+    }
+
+    
+    CGSize textSize = [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
     self.textFrame = (CGRect){{textX, textY}, textSize};
     
     CGFloat h = 0;

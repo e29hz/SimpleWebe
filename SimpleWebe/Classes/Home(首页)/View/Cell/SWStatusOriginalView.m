@@ -58,6 +58,7 @@
         self.nameLabel = nameLabel;
 
         // 正文
+        
         SWStatusLabel *textLabel = [[SWStatusLabel alloc] init];
         [self addSubview:textLabel];
         self.textLabel = textLabel;
@@ -96,23 +97,30 @@
     _originalFrame = originalFrame;
     
     SWStatus *status = originalFrame.status;
-    
+    SWUser *user = status.user;
     self.frame = originalFrame.frame;
     
     // 昵称
-    self.nameLabel.text = status.user.name;
+    self.nameLabel.text = user.name;
     self.nameLabel.frame = originalFrame.nameFrame;
-    if (status.user.isVip) { //会员图标
+    if (user.isVip) { //会员图标
         self.nameLabel.textColor = [UIColor orangeColor];
         self.vipView.hidden = NO;
         self.vipView.frame = originalFrame.vipFrame;
-        self.vipView.image = [UIImage imageNamed:[NSString stringWithFormat:@"common_icon_membership_level%d", status.user.mbrank]];
+        self.vipView.image = [UIImage imageNamed:[NSString stringWithFormat:@"common_icon_membership_level%d", user.mbrank]];
     } else {
         self.nameLabel.textColor = [UIColor blackColor];
         self.vipView.hidden = YES;
     }
     // 正文
-    self.textLabel.attributedText = status.attributedText;
+    if (status.isRetweeted) {
+        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithAttributedString:status.attributedText];
+        NSInteger len = user.name.length + 3;
+        [text deleteCharactersInRange:NSMakeRange(0, len)];
+        self.textLabel.attributedText = text;
+    } else {
+        self.textLabel.attributedText = status.attributedText;
+    }
     self.textLabel.frame = originalFrame.textFrame;
     // 时间
     NSString *time = status.created_at;
@@ -133,7 +141,7 @@
     
     // 头像
     self.iconView.frame = originalFrame.iconFrame;
-    NSString *imageUrlStr = status.user.profile_image_url;
+    NSString *imageUrlStr = user.profile_image_url;
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:imageUrlStr] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     // 配图相册
     if (status.pic_urls.count) {

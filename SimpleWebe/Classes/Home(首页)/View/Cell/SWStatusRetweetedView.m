@@ -13,6 +13,7 @@
 #import "SWStatusPhotosView.h"
 #import "SWStatusLabel.h"
 #import "SWStatusRetweetedToolbar.h"
+#import "SWStatusDetailViewController.h"
 
 @interface SWStatusRetweetedView ()
 
@@ -52,8 +53,27 @@
         SWStatusRetweetedToolbar *toolbar = [[SWStatusRetweetedToolbar alloc] init];
         [self addSubview:toolbar];
         self.toolbar = toolbar;
+        
+        // 添加手势监听器
+        
+    
     }
     return self;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    //跳转控制器
+    UITabBarController *tabbarVc = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    //当前选中的控制器
+    UINavigationController *nav = (UINavigationController *)tabbarVc.selectedViewController;
+    
+    //push微博详情控制器
+    SWStatusDetailViewController *detailVc = [[SWStatusDetailViewController alloc] init];
+    
+    detailVc.status = self.retweetedFrame.retweetedStatus;
+    [nav pushViewController:detailVc animated:YES];
+    
 }
 
 - (void)setRetweetedFrame:(SWStatusRetweetedFrame *)retweetedFrame
@@ -85,6 +105,8 @@
     } else {
         self.toolbar.hidden = YES;
     }
+    
+    
     
 }
 

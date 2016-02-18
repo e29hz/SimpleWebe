@@ -62,6 +62,8 @@
 		E42DC2341C74B1B40076D34E /* SWCommentsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2331C74B1B40076D34E /* SWCommentsResult.m */; };
 		E42DC2371C74B21F0076D34E /* SWComment.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2361C74B21F0076D34E /* SWComment.m */; };
 		E42DC23A1C74B53C0076D34E /* SWCommentsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2391C74B53C0076D34E /* SWCommentsParam.m */; };
+		E42DC23E1C755F320076D34E /* SWRepostsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC23D1C755F320076D34E /* SWRepostsParam.m */; };
+		E42DC2411C755F450076D34E /* SWRepostsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E42DC2401C755F450076D34E /* SWRepostsResult.m */; };
 		E43DECB61C6AF80900D23F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E43DECB51C6AF80900D23F9E /* Assets.xcassets */; };
 		E43DECB91C6F5F6000D23F9E /* SWStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43DECB81C6F5F6000D23F9E /* SWStatusLabel.m */; };
 		E448407F1C4138660088975D /* SWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E448407E1C4138660088975D /* SWOAuthViewController.m */; };
@@ -236,6 +238,10 @@
 		E42DC2361C74B21F0076D34E /* SWComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWComment.m; sourceTree = "<group>"; };
 		E42DC2381C74B53C0076D34E /* SWCommentsParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommentsParam.h; sourceTree = "<group>"; };
 		E42DC2391C74B53C0076D34E /* SWCommentsParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommentsParam.m; sourceTree = "<group>"; };
+		E42DC23C1C755F320076D34E /* SWRepostsParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRepostsParam.h; sourceTree = "<group>"; };
+		E42DC23D1C755F320076D34E /* SWRepostsParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRepostsParam.m; sourceTree = "<group>"; };
+		E42DC23F1C755F450076D34E /* SWRepostsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRepostsResult.h; sourceTree = "<group>"; };
+		E42DC2401C755F450076D34E /* SWRepostsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRepostsResult.m; sourceTree = "<group>"; };
 		E43DECB51C6AF80900D23F9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E43DECB71C6F5F6000D23F9E /* SWStatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStatusLabel.h; sourceTree = "<group>"; };
 		E43DECB81C6F5F6000D23F9E /* SWStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStatusLabel.m; sourceTree = "<group>"; };
@@ -405,7 +411,6 @@
 		E4096FD91C4E70A70031299C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				E42DC2221C7358A00076D34E /* Detail */,
 				E40717461C73443D002775FC /* Toolbar */,
 				E4096FDC1C4E70A70031299C /* SWStatusTableViewCell.h */,
 				E4096FDD1C4E70A70031299C /* SWStatusTableViewCell.m */,
@@ -506,7 +511,8 @@
 				E42DC22A1C7359290076D34E /* SWStatusDetailTopToolbar.m */,
 				E42DC22C1C7362170076D34E /* SWStatusDetailTopToolbar.xib */,
 			);
-			path = Detail;
+			name = Detail;
+			path = Cell/Detail;
 			sourceTree = "<group>";
 		};
 		E42DC22E1C74B1350076D34E /* Comments */ = {
@@ -518,6 +524,17 @@
 				E42DC2391C74B53C0076D34E /* SWCommentsParam.m */,
 			);
 			path = Comments;
+			sourceTree = "<group>";
+		};
+		E42DC23B1C755F1B0076D34E /* Reposts */ = {
+			isa = PBXGroup;
+			children = (
+				E42DC23C1C755F320076D34E /* SWRepostsParam.h */,
+				E42DC23D1C755F320076D34E /* SWRepostsParam.m */,
+				E42DC23F1C755F450076D34E /* SWRepostsResult.h */,
+				E42DC2401C755F450076D34E /* SWRepostsResult.m */,
+			);
+			path = Reposts;
 			sourceTree = "<group>";
 		};
 		E44840791C4138180088975D /* OAuth(授权) */ = {
@@ -823,6 +840,7 @@
 		E4F9873B1C3D16C20078E1AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E42DC2221C7358A00076D34E /* Detail */,
 				E4096FD91C4E70A70031299C /* Cell */,
 				E4968E271C45387400CCE503 /* SWLoadMoreFooter.h */,
 				E4968E281C45387400CCE503 /* SWLoadMoreFooter.m */,
@@ -878,6 +896,7 @@
 		E4F9873F1C3D16C20078E1AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E42DC23B1C755F1B0076D34E /* Reposts */,
 				E42DC22E1C74B1350076D34E /* Comments */,
 				E40717181C71D635002775FC /* Common */,
 				E491EFC01C4D162C008F2EF6 /* UnreadCount */,
@@ -1195,6 +1214,7 @@
 				E41B06C71C3E7B370096B35A /* UIView+Extension.m in Sources */,
 				E491EFB61C4D0E93008F2EF6 /* SWAccount.m in Sources */,
 				E407171B1C71D654002775FC /* SWCommonItem.m in Sources */,
+				E42DC2411C755F450076D34E /* SWRepostsResult.m in Sources */,
 				E424A21E1C590C3C00AFE2DA /* MJPhotoView.m in Sources */,
 				E448407F1C4138660088975D /* SWOAuthViewController.m in Sources */,
 				E491EF791C49EA07008F2EF6 /* SWHttpTool.m in Sources */,
@@ -1258,6 +1278,7 @@
 				E40717361C73049E002775FC /* SWSettingViewController.m in Sources */,
 				E4F987021C3D16B50078E1AA /* main.m in Sources */,
 				E42DC2251C7358A00076D34E /* SWStatusRetweetedToolbar.m in Sources */,
+				E42DC23E1C755F320076D34E /* SWRepostsParam.m in Sources */,
 				E4F472F31C3D34EE00DB75C6 /* SWProfileTableViewController.m in Sources */,
 				E424A21F1C590C3C00AFE2DA /* SDWebImageManager+MJ.m in Sources */,
 				E424A22C1C5A345500AFE2DA /* SWEmotionToolbar.m in Sources */,

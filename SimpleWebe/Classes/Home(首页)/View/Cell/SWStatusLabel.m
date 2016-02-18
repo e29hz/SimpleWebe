@@ -124,8 +124,7 @@
     
     //设置链接选中背景
     [self showLinkBackground:touchingLink];
-
-
+    
 }
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -196,5 +195,27 @@
     });
     
 }
+/**
+ *  这个方法会返回能够处理时间的控件
+ *
+ *  @param point 触摸点
+ */
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    if([self touchingLinkWithPoint:point])
+    {
+        return self;
+    }
+    return nil;
 
+}
+
+//- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+//{
+//    if([self touchingLinkWithPoint:point])
+//    {
+//        return YES;
+//    }
+//    return NO;
+//}
 @end

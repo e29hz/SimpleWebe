@@ -16,6 +16,8 @@
 #import "SWStatusDetailTopToolbar.h"
 #import "SWCommentsParam.h"
 #import "SWCommentsResult.h"
+#import "SWRepostsParam.h"
+#import "SWRepostsResult.h"
 #import "SWComment.h"
 #import "SWStatusTool.h"
 
@@ -25,6 +27,8 @@
 @property (nonatomic, strong) SWStatusDetailTopToolbar *topToolbar;
 
 @property (nonatomic, strong) NSMutableArray *comments;
+
+@property (nonatomic, strong) NSMutableArray *reposts;
 
 
 @end
@@ -37,6 +41,14 @@
         self.comments = [NSMutableArray array];
     }
     return _comments;
+}
+
+- (NSMutableArray *)reposts
+{
+    if (_reposts == nil) {
+        self.reposts = [NSMutableArray array];
+    }
+    return _reposts;
 }
 
 - (SWStatusDetailTopToolbar *)topToolbar
@@ -109,7 +121,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.comments.count;
+    if (self.topToolbar.selectedButtonType == SWStatusDetailTopToolbarButtonTypeComment) {
+        return self.comments.count;
+    } else {
+        return self.reposts.count;
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,8 +136,16 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    SWComment *cmt = [SWComment mj_objectWithKeyValues:self.comments[indexPath.row]];
-    cell.textLabel.text = cmt.text;
+    
+    if (self.topToolbar.selectedButtonType == SWStatusDetailTopToolbarButtonTypeComment) {
+        SWComment *cmt = self.comments[indexPath.row];
+        cell.textLabel.text = cmt.text;
+    } else {
+        SWStatus *repost = self.reposts[indexPath.row];
+        cell.textLabel.text = repost.text;
+
+    }
+    
     return cell;
 }
 
@@ -137,6 +162,7 @@
 #pragma mark - 顶部工具条的代理
 - (void)topToolbar:(SWStatusDetailTopToolbar *)topToolbar didSelectedButton:(SWStatusDetailTopToolbarButtonType)buttonType
 {
+    [self.tableView reloadData];
     switch (buttonType) {
         case SWStatusDetailTopToolbarButtonTypeComment: // 评论
             [self loadComments];
@@ -155,8 +181,8 @@
 {
     SWCommentsParam *param = [SWCommentsParam param];
     param.id = self.status.idstr;
-    SWComment *cmt = [SWComment mj_objectWithKeyValues:[self.comments firstObject]];
-            param.since_id = cmt.idstr;
+    SWComment *cmt = [self.comments firstObject];
+    param.since_id = cmt.idstr;
     
     [SWStatusTool commentsWithParam:param success:^(SWCommentsResult *result) {
         // 评论总数
@@ -178,7 +204,23 @@
  */
 - (void)loadRetweeteds
 {
-    SWLog(@"loadRetweeteds");
+    SWRepostsParam *param = [SWRepostsParam param];
+    param.id = self.status.idstr;
+    SWStatus *repost = [self.reposts firstObject];
+    param.since_id = repost.idstr;
+    
+    [SWStatusTool repostsWithParam:param success:^(SWRepostsResult *result) {
+        // 转发总数
+        self.status.reposts_count = result.total_number;
+        self.topToolbar.status = self.status;
+        
+        // 累加评论数据
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, result.reposts.count)];
+        [self.reposts insertObjects:result.reposts atIndexes:set];
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 

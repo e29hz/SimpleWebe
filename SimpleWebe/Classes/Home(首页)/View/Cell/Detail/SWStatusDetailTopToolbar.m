@@ -64,6 +64,8 @@
 
 - (IBAction)buttonClick:(UIButton *)button {
     
+    self.selectedButtonType = (int)button.tag;
+    
     // 1.控制按钮状态
     self.selectedButton.selected = NO;
     button.selected = YES;
@@ -109,6 +111,7 @@
         defaultTitle = [NSString stringWithFormat:@"%@ 0", defaultTitle];
     }
     [button setTitle:defaultTitle forState:UIControlStateNormal];
+    [button setTitle:defaultTitle forState:UIControlStateSelected];
 }
 
 @end

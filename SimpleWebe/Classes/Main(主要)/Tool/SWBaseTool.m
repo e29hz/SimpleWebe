@@ -15,6 +15,7 @@
     NSDictionary *params = [param mj_keyValues];
     [SWHttpTool get:url params:params success:^(id responseObject) {
         if (success) {
+//            SWLog(@"--------------------------------------------\n%@", responseObject);
             id result = [resultClass mj_objectWithKeyValues:responseObject];
             success(result);
         }

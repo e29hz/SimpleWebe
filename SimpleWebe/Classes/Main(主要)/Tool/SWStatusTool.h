@@ -13,9 +13,11 @@
 #import "SWSendStatusResult.h"
 #import "SWCommentsParam.h"
 #import "SWCommentsResult.h"
+#import "SWRepostsParam.h"
+#import "SWRepostsResult.h"
 #import "SWBaseTool.h"
 
-@interface SWStatusTool : NSObject
+@interface SWStatusTool : SWBaseTool
 /**
  *  加载首页微博数据
  *
@@ -37,5 +39,10 @@
  *  加载评论数据
  */
 + (void)commentsWithParam:(SWCommentsParam *)param success:(void (^)(SWCommentsResult *result))success failure:(void (^)(NSError *error))failure;
+
+/**
+ *  加载转发数据
+ */
++ (void)repostsWithParam:(SWRepostsParam *)param success:(void (^)(SWRepostsResult *result))success failure:(void (^)(NSError *error))failure;
 
 @end

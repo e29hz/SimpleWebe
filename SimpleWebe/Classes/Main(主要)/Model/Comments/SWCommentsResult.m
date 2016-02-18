@@ -11,7 +11,7 @@
 #import "SWComment.h"
 
 @implementation SWCommentsResult
-- (NSDictionary *)objectClassInArray
++ (NSDictionary *)mj_objectClassInArray
 {
     return @{@"comments" : [SWComment class]};
 

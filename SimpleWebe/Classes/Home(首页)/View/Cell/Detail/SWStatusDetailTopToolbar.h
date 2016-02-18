@@ -27,4 +27,7 @@ typedef enum {
 
 @property (nonatomic, weak) id<SWStatusDetailTopToolbarDelegate> delegate;
 @property (nonatomic, assign) SWStatus *status;
+
+@property (nonatomic, assign) SWStatusDetailTopToolbarButtonType selectedButtonType;
+
 @end
