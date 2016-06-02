@@ -10,8 +10,6 @@
 
 @implementation SWComposePhotosView
 
-
-
 - (void)addImage:(UIImage *)image
 {
     UIImageView *imageView = [[UIImageView alloc] init];

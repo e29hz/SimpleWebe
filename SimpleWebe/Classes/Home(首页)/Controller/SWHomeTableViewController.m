@@ -58,6 +58,7 @@
     
     //监听链接选中的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linkDidSelected:) name:SWLinkDidSelectedNotification object:nil];
+     
 }
 
 - (void)dealloc
@@ -362,7 +363,7 @@
     SWStatusDetailViewController *detailVc = [[SWStatusDetailViewController alloc] init];
     SWStatusFrame *frame = self.statusFrames[indexPath.row];
     detailVc.status = frame.status;
-    [self.navigationController pushViewController:detailVc animated:YES];
+    [self.navigationController  pushViewController:detailVc animated:YES];
 }
 
 @end

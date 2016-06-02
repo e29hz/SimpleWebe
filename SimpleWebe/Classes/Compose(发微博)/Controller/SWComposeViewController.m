@@ -168,16 +168,13 @@
         self.toolbar.transform = CGAffineTransformMakeTranslation(0, - keyboardH);
     }];
 }
-
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    //成为第一响应者
-    [self.textView becomeFirstResponder];
+    [textField resignFirstResponder];
+    
+    return YES;
+    
 }
-
 /**
  *  设置导航条
  */
@@ -242,6 +239,7 @@
         //拼接文件参数
         UIImage *image = [self.photosView.images firstObject];
         NSData *data = UIImageJPEGRepresentation(image, 1.0);
+        image = [UIImage imageWithData:data];
         [formData appendPartWithFileData:data name:@"pic" fileName:@"status.jpg" mimeType:@"image/jpeg"];
     } success:^(id responseObject) {
         [self hud:@"发布成功"];

@@ -47,11 +47,17 @@
 }
 
 #pragma mark - Table view data source
+
+/**
+ *  组数
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.groups.count;
 }
-
+/**
+ *  每组中cell个数
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     SWCommonGroup *group = self.groups[section];

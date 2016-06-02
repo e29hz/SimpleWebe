@@ -86,7 +86,7 @@
         textView.editable = NO;
         //不能滚动
         textView.scrollEnabled = NO;
-        //不能喝用户交互
+        //不能和用户交互
         textView.userInteractionEnabled = NO;
         textView.textContainerInset = UIEdgeInsetsMake(0, -5, 0, -5);
         textView.backgroundColor = [UIColor clearColor];

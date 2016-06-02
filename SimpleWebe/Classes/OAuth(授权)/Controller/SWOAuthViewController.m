@@ -22,22 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    UIWebView *webView = [[UIWebView alloc] init];
-//    webView.frame = self.view.bounds;
-    CGFloat webViewW = self.view.bounds.size.width;
-    CGFloat webViewH = self.view.bounds.size.height;
-
-    webView.frame = CGRectMake(0, 22, webViewW, webViewH);
-
-    [self.view addSubview:webView];
-    
-    NSString *urlStr = [NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=%@&redirect_uri=%@", SWAppkey, SWRedirectURI];
-    NSURL *url = [NSURL URLWithString:urlStr];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:request];
-    
-    webView.delegate = self;
+        
     
 }
 
@@ -126,7 +111,7 @@
     
     
     [SWAccountTool accessTokenWithParam:param success:^(SWAccount *account) {
-        //存储模型 //存储模型
+        //存储模型
         //确定账号的过期时间
         NSDate *nowTime = [NSDate date];
         account.expires_time = [nowTime dateByAddingTimeInterval:account.expires_in.doubleValue];
